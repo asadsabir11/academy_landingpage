@@ -58,10 +58,10 @@
     .promise i{font-style:normal;color:var(--gold);font-weight:900}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
     .micro{font-size:13px;color:#b9c7d9;margin-top:12px}
-    .hero-card{position:relative;min-height:520px}
-    .hero-photo{position:absolute;right:0;bottom:-66px;width:76%;filter:drop-shadow(0 20px 45px rgba(0,0,0,.25));z-index:2}
-    .hero-photo img{width:100%;max-height:590px;object-fit:contain;object-position:bottom right}
-    .credential-card{position:absolute;left:0;top:44px;z-index:3;width:300px;background:#fff;color:var(--ink);border-radius:20px;padding:24px;box-shadow:0 26px 70px rgba(0,0,0,.22)}
+    .hero-card{position:relative;width:100%;max-width:420px;margin-left:auto}
+    .hero-photo{border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 26px 70px rgba(0,0,0,.3)}
+    .hero-photo img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+    .credential-card{position:relative;z-index:3;margin:-56px 22px 0;background:#fff;color:var(--ink);border-radius:20px;padding:24px;box-shadow:0 26px 70px rgba(0,0,0,.22)}
     .credential-card .kicker{color:var(--blue);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
     .credential-card h3{font-family:"Playfair Display",Georgia,serif;font-size:27px;line-height:1.08;margin:6px 0 8px;color:var(--navy)}
     .credential-card p{font-size:14px;color:var(--muted);margin:0}
@@ -137,10 +137,10 @@
     .footer-row b{color:#fff}
     .floating-wa{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--green);color:#fff;width:58px;height:58px;border-radius:999px;display:grid;place-items:center;font-size:28px;box-shadow:0 14px 32px rgba(24,169,87,.34)}
     @media(max-width:960px){
-      .navlinks{display:none}.hero-grid,.mentor-grid,.leadbox{grid-template-columns:1fr}.hero-card{min-height:520px}.subjects{grid-template-columns:1fr 1fr}.demo-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr}.trust-grid{grid-template-columns:1fr 1fr}.choice-grid{grid-template-columns:1fr}.hero{padding-top:50px}.mentor-copy h2{font-size:40px}
+      .navlinks{display:none}.hero-grid,.mentor-grid,.leadbox{grid-template-columns:1fr}.hero-card{margin:0 auto}.subjects{grid-template-columns:1fr 1fr}.demo-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr}.trust-grid{grid-template-columns:1fr 1fr}.choice-grid{grid-template-columns:1fr}.hero{padding-top:50px}.mentor-copy h2{font-size:40px}
     }
     @media(max-width:620px){
-      nav .btn-wa{display:none}.hero h1{font-size:44px}.hero .lead{font-size:18px}.hero-card{min-height:480px}.hero-photo{width:88%;right:-18%;bottom:-66px}.credential-card{width:245px;top:24px;padding:18px}.credential-card h3{font-size:23px}.subjects{grid-template-columns:1fr}.trust-grid{grid-template-columns:1fr 1fr}.trust-item{border-bottom:1px solid var(--border)}.mentor-stats{grid-template-columns:1fr}.leadbox{padding:28px}.section-head h2,.final-cta h2{font-size:36px}.footer-row{flex-direction:column;align-items:flex-start}
+      nav .btn-wa{display:none}.hero h1{font-size:44px}.hero .lead{font-size:18px}.credential-card{margin:-40px 14px 0;padding:18px}.credential-card h3{font-size:23px}.subjects{grid-template-columns:1fr}.trust-grid{grid-template-columns:1fr 1fr}.trust-item{border-bottom:1px solid var(--border)}.mentor-stats{grid-template-columns:1fr}.leadbox{padding:28px}.section-head h2,.final-cta h2{font-size:36px}.footer-row{flex-direction:column;align-items:flex-start}
     }
   </style>
 </head>
@@ -173,6 +173,7 @@
           <div class="micro">No long form. Choose your subject and class type, then continue on WhatsApp.</div>
         </div>
         <div class="hero-card">
+          <div class="hero-photo"><img src="assets/ibrahim-standing.jpg" alt="Dr. Ibrahim Malick, PhD"></div>
           <div class="credential-card">
             <div class="kicker">Professor-led tuition</div>
             <h3>Dr. Ibrahim Malick, PhD</h3>
@@ -180,7 +181,6 @@
             <div class="cred-row"><span class="cred-icon">✓</span><span>Group & Private Classes</span></div>
             <div class="cred-row"><span class="cred-icon">▶</span><span>Demo lessons available</span></div>
           </div>
-          <div class="hero-photo"><img src="assets/ibrahim-standing.jpg" alt="Dr. Ibrahim Malick, PhD"></div>
         </div>
       </div>
     </section>
