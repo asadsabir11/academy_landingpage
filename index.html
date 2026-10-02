@@ -5,14 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="apple-touch-icon" href="assets/favicon.png" />
-  <title>Professor-Led A/O Level Tuition | The Digital Tutor</title>
-  <meta name="description" content="Professor-led A/O Level tuition in Computer Science, English, Mathematics and Physics. Choose focused group classes or private 1-to-1 tuition with Dr. Ibrahim Malick, PhD." />
-  <meta property="og:title" content="Professor-Led A/O Level Tuition" />
-  <meta property="og:description" content="Computer Science, English, Mathematics & Physics. Group and Private 1-to-1 classes with Dr. Ibrahim Malick, PhD." />
+  <title>A/O Level Tuition with Dr. Ibrahim Malick, PhD | The Digital Tutor</title>
+  <meta name="description" content="Learn A/O Levels directly with Dr. Ibrahim Malick, PhD. Computer Science, Mathematics, English and Physics. Group classes PKR 10,000 per subject/month or private 1-to-1 tuition PKR 3,000/hour." />
+  <meta property="og:title" content="Learn A/O Levels Directly with Dr. Ibrahim Malick, PhD" />
+  <meta property="og:description" content="Computer Science, Mathematics, English & Physics. Group classes PKR 10,000/month per subject. Private 1-to-1 PKR 3,000/hour." />
   <meta name="theme-color" content="#071a35" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/ibrahim-hero.jpg" fetchpriority="high">
+
+  <script>
+    // ---- Analytics ----------------------------------------------------------
+    // Paste the IDs here to switch tracking on. Left empty, nothing is loaded.
+    var GA_ID = '';          // Google Analytics 4, e.g. 'G-XXXXXXXXXX'
+    var META_PIXEL_ID = '';  // Meta Pixel, e.g. '123456789012345'
+
+    if (GA_ID) {
+      var g = document.createElement('script');
+      g.async = true;
+      g.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(g);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', GA_ID); // sends page_view
+    }
+    if (META_PIXEL_ID) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', META_PIXEL_ID);
+      fbq('track', 'PageView');
+    }
+
+    // track('whatsapp_click', {cta:'hero'}, 'Contact') — the third argument is an
+    // optional Meta standard event; otherwise the event is sent as a custom one.
+    function track(event, params, metaEvent) {
+      params = params || {};
+      if (window.gtag) gtag('event', event, params);
+      if (window.fbq) {
+        if (metaEvent) fbq('track', metaEvent, params);
+        else fbq('trackCustom', event, params);
+      }
+    }
+  </script>
+
   <style>
     :root{
       --navy:#071a35;
@@ -21,346 +61,737 @@
       --gold:#f4c55b;
       --gold2:#dca73a;
       --ink:#10213a;
-      --muted:#5c6b80;
+      --muted:#55657a;
       --cream:#fffaf0;
-      --white:#ffffff;
-      --green:#18a957;
-      --border:#e6e9ef;
-      --shadow:0 18px 60px rgba(5,25,55,.12);
+      --green:#12884a;
+      --green-dark:#0e7340;
+      --border:#e3e7ee;
+      --soft:#f6f8fb;
+      --shadow:0 14px 40px rgba(5,25,55,.10);
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+    [hidden]{display:none!important}
+    html{scroll-behavior:smooth;scroll-padding-top:84px}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16px;color:var(--ink);background:#fff;line-height:1.6;overflow-x:hidden}
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
-    .container{width:min(1180px,92%);margin:0 auto}
-    .topbar{background:#041429;color:#fff;font-size:14px}
-    .topbar .container{display:flex;justify-content:center;gap:10px;padding:9px 0;text-align:center}
-    .topbar strong{color:var(--gold)}
-    header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(8,31,61,.08)}
-    nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px;color:var(--navy)}
-    .brand-logo{height:48px;width:auto;display:block}
-    .navlinks{display:flex;gap:24px;font-size:14px;font-weight:600;color:#44536a}
-    .navlinks a:hover{color:var(--blue)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:12px;padding:13px 20px;font-weight:800;transition:.2s ease;border:0;cursor:pointer;font-family:inherit}
-    .btn:hover{transform:translateY(-1px)}
-    .btn-wa{background:var(--green);color:#fff;box-shadow:0 10px 24px rgba(24,169,87,.24)}
-    .btn-primary{background:linear-gradient(135deg,var(--gold),#ffd974);color:#15233a;box-shadow:0 12px 28px rgba(220,167,58,.27)}
+    h1,h2,h3{margin:0}
+    .container{width:min(1160px,calc(100% - 32px));margin:0 auto}
+    .serif{font-family:"Playfair Display",Georgia,serif}
+    .icon{width:20px;height:20px;flex:none;fill:currentColor}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;border-radius:12px;padding:12px 22px;font:inherit;font-weight:700;font-size:16px;line-height:1.25;text-align:center;border:0;cursor:pointer;transition:background .15s,border-color .15s}
+    .btn-wa{background:var(--green);color:#fff}
+    .btn-wa:hover{background:var(--green-dark)}
+    .btn-gold{background:var(--gold);color:#15233a}
+    .btn-gold:hover{background:#f0b93f}
     .btn-dark{background:var(--navy);color:#fff}
-    .btn-outline{border:1px solid #d8dde6;background:#fff;color:var(--navy)}
-    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 70% 25%,#1c4c86 0,#0c2b55 30%,#071a35 70%);color:#fff;padding:72px 0 66px}
-    .hero:before{content:"";position:absolute;inset:auto -10% -45% 35%;height:520px;background:radial-gradient(circle,rgba(244,197,91,.18),transparent 66%)}
-    .hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);padding:7px 11px;border-radius:999px;font-size:13px;font-weight:700;color:#e8edf5}
-    .hero h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(44px,6vw,76px);line-height:1.02;margin:18px 0 18px;letter-spacing:-1.5px}
+    .btn-dark:hover{background:var(--navy2)}
+    .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+    .btn-ghost:hover{border-color:#fff}
+    .btn-outline{background:#fff;color:var(--navy);border:1.5px solid #cfd6e1}
+    .btn-outline:hover{border-color:var(--navy)}
+    .btn-lg{min-height:58px;padding:16px 28px;font-size:18px}
+    .btn-sm{min-height:44px;padding:10px 16px;font-size:15px}
+    .btn-block{width:100%}
+
+    /* Announcement bar */
+    .announce{background:#041429;color:#fff;font-size:14px}
+    .announce .container{display:flex;align-items:center;justify-content:center;gap:16px;padding:9px 0;flex-wrap:wrap;text-align:center}
+    .announce a{color:var(--gold);font-weight:700;white-space:nowrap}
+    .announce a:hover{text-decoration:underline}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border)}
+    nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--navy)}
+    .brand-logo{height:44px;width:auto}
+    .navlinks{display:flex;gap:24px;font-size:15px;font-weight:600;color:#44536a}
+    .navlinks a:hover{color:var(--blue)}
+
+    /* Hero */
+    .hero{background:linear-gradient(160deg,#0c2b55 0%,var(--navy) 65%);color:#fff;padding:64px 0 72px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+    .label{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.12em;color:var(--gold);text-transform:uppercase}
+    .hero h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(36px,4.8vw,58px);line-height:1.08;letter-spacing:-.5px;margin:14px 0 18px}
     .hero h1 span{color:var(--gold)}
-    .hero .lead{font-size:20px;color:#dce7f4;max-width:690px;margin:0 0 26px}
-    .promise{display:flex;gap:10px;align-items:flex-start;color:#fff;font-weight:650;margin:14px 0}
-    .promise i{font-style:normal;color:var(--gold);font-weight:900}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-    .micro{font-size:13px;color:#b9c7d9;margin-top:12px}
-    .hero-card{position:relative;width:100%;max-width:420px;margin-left:auto}
-    .hero-photo{border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 26px 70px rgba(0,0,0,.3)}
-    .hero-photo img{display:block;width:100%;height:auto}
-    .credential-card{position:relative;margin:18px 0 0;background:#fff;color:var(--ink);border-radius:20px;padding:24px;box-shadow:0 26px 70px rgba(0,0,0,.22)}
-    .credential-card .kicker{color:var(--blue);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
-    .credential-card h3{font-family:"Playfair Display",Georgia,serif;font-size:27px;line-height:1.08;margin:6px 0 8px;color:var(--navy)}
-    .credential-card p{font-size:14px;color:var(--muted);margin:0}
-    .cred-row{display:flex;gap:10px;align-items:center;margin-top:18px;font-size:14px;font-weight:650}
-    .cred-icon{width:34px;height:34px;border-radius:10px;background:#fff4d6;color:#9c6e13;display:grid;place-items:center}
-    .trust{background:#fff;border-bottom:1px solid var(--border)}
-    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-    .trust-item{padding:20px 16px;text-align:center;border-right:1px solid var(--border)}
-    .trust-item:last-child{border-right:0}
-    .trust-item b{display:block;color:var(--navy);font-size:15px}
-    .trust-item span{font-size:13px;color:var(--muted)}
-    section{padding:84px 0}
-    .section-head{max-width:780px;margin:0 auto 42px;text-align:center}
-    .section-head .kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:800}
-    .section-head h2{font-family:"Playfair Display",Georgia,serif;font-size:clamp(34px,5vw,52px);line-height:1.08;margin:8px 0 13px;color:var(--navy)}
+    .hero-subjects{font-size:19px;font-weight:700;color:#fff;margin:0 0 14px}
+    .hero-subjects span{color:var(--gold);padding:0 2px}
+    .hero-copy{font-size:18px;color:#d3dfee;max-width:560px;margin:0}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .hero-prices{display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:22px;font-size:15px;color:#c3d1e3}
+    .hero-prices b{color:#fff}
+    .hero-grid>*{min-width:0}
+    .hero-figure{margin:0}
+    .hero-figure img{width:100%;height:auto;border-radius:20px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+    .hero-figure figcaption{margin-top:14px;font-size:15px;color:#c3d1e3;text-align:center}
+    .hero-figure figcaption b{color:#fff}
+
+    /* Credibility strip */
+    .cred{background:var(--cream);border-bottom:1px solid #f0e3c0;padding:34px 0}
+    .cred-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+    .cred-head h2{font-family:"Playfair Display",Georgia,serif;font-size:26px;color:var(--navy)}
+    .cred-links{display:flex;gap:10px;flex-wrap:wrap}
+    .cred-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .cred-item{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid #eee2c3;border-radius:14px;padding:16px;font-weight:650;font-size:15px;line-height:1.4;color:var(--navy)}
+    .tick{flex:none;width:26px;height:26px;border-radius:999px;background:#fff1c9;color:#8a6210;display:grid;place-items:center;font-size:14px;font-weight:900}
+
+    /* Sections */
+    section{padding:80px 0}
+    .section-head{max-width:760px;margin:0 auto 40px;text-align:center}
+    .kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:800}
+    .section-head h2{font-family:"Playfair Display",Georgia,serif;font-size:clamp(30px,4.2vw,46px);line-height:1.12;margin:8px 0 12px;color:var(--navy)}
     .section-head p{color:var(--muted);font-size:18px;margin:0}
+    .alt{background:var(--soft)}
+
+    /* Subjects */
     .subjects{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .subject{border:1px solid var(--border);border-radius:18px;padding:26px 22px;background:#fff;box-shadow:0 8px 25px rgba(7,26,53,.05);transition:.2s}
-    .subject:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-    .subject .icon{width:50px;height:50px;border-radius:14px;background:#edf4ff;color:var(--blue);display:grid;place-items:center;font-size:25px;margin-bottom:18px}
-    .subject h3{margin:0 0 8px;font-size:20px;color:var(--navy)}
-    .subject p{margin:0;color:var(--muted);font-size:14px}
-    .choose{background:#f7f9fc}
-    .choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-    .choice{background:#fff;border-radius:22px;padding:32px;border:1px solid var(--border);box-shadow:0 12px 30px rgba(7,26,53,.06)}
-    .choice.highlight{border:2px solid #f0c55a;position:relative}
-    .choice .tag{position:absolute;right:20px;top:20px;background:#fff1bf;color:#7d5c12;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800}
-    .choice h3{font-family:"Playfair Display",Georgia,serif;font-size:31px;margin:0 0 8px;color:var(--navy)}
-    .choice .sub{color:var(--muted);margin-bottom:18px}
-    .checks{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:11px}
-    .checks li{display:flex;gap:10px;align-items:flex-start;color:#394a62}
+    .subject{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:18px;padding:24px;background:#fff}
+    .subject-icon{width:48px;height:48px;border-radius:12px;background:#edf3fc;color:var(--blue);display:grid;place-items:center;margin-bottom:16px}
+    .subject-icon svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .subject h3{font-size:20px;color:var(--navy);margin-bottom:8px}
+    .subject p{margin:0 0 16px;color:var(--muted);font-size:15px}
+    .badges{display:grid;gap:6px;margin:auto 0 18px}
+    .badge{font-size:14px;font-weight:600;color:#2f4a68}
+    .badge:before{content:"✓";color:var(--green);font-weight:900;margin-right:8px}
+
+    /* Pricing */
+    .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px;margin:0 auto}
+    .price-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:22px;padding:32px;box-shadow:var(--shadow)}
+    .price-card.featured{border:2px solid var(--gold)}
+    .price-card h3{font-family:"Playfair Display",Georgia,serif;font-size:28px;color:var(--navy)}
+    .price-card .fit{color:var(--muted);margin:6px 0 20px;font-size:15px}
+    .price{padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:20px}
+    .price b{display:block;font-size:40px;line-height:1.1;color:var(--navy);font-weight:800;letter-spacing:-.5px}
+    .price span{font-size:16px;color:var(--muted);font-weight:600}
+    .checks{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:10px}
+    .checks li{display:flex;gap:10px;color:#33445b}
     .checks li:before{content:"✓";font-weight:900;color:var(--green)}
-    .demo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .demo{border-radius:18px;overflow:hidden;border:1px solid var(--border);background:#fff;box-shadow:0 10px 28px rgba(7,26,53,.07)}
-    .video-wrap{position:relative;padding-top:56.25%;background:#0b1f3b}
-    .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-    .demo-body{padding:18px}
-    .demo-body h3{margin:0 0 6px;color:var(--navy)}
-    .demo-body p{margin:0;color:var(--muted);font-size:14px}
-    .mentor{background:linear-gradient(180deg,#fffaf0,#fff)}
-    .mentor-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
-    .mentor-photo{position:relative}
-    .mentor-photo:before{content:"";position:absolute;left:-20px;top:-20px;width:70%;height:70%;background:#f8dfa0;border-radius:30px;z-index:0}
-    .mentor-photo img{position:relative;z-index:1;border-radius:24px;box-shadow:var(--shadow);width:100%;max-height:580px;object-fit:cover;object-position:center top}
-    .mentor-copy h2{font-family:"Playfair Display",Georgia,serif;font-size:48px;line-height:1.1;margin:0 0 16px;color:var(--navy)}
-    .mentor-copy p{font-size:18px;color:var(--muted)}
-    .mentor-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
-    .mentor-stat{background:#fff;border:1px solid #eadfbf;border-radius:16px;padding:16px}
-    .mentor-stat b{display:block;color:var(--navy);font-size:16px}
-    .mentor-stat span{font-size:13px;color:var(--muted)}
-    .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .checks li.teacher{font-weight:700;color:var(--navy)}
+    .price-card .btn{margin-top:auto}
+
+    /* Comparison */
+    .compare{max-width:980px;margin:36px auto 0}
+    .compare table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;font-size:15px}
+    .compare th,.compare td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--border)}
+    .compare thead th{background:var(--navy);color:#fff;font-size:15px}
+    .compare tbody th{color:var(--navy);font-weight:700;width:22%}
+    .compare tbody tr:last-child th,.compare tbody tr:last-child td{border-bottom:0}
+    .compare-cards{display:none}
+
+    /* Selector */
+    .selector{background:var(--navy);border-radius:24px;color:#fff;padding:44px;display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}
+    .selector h2{font-family:"Playfair Display",Georgia,serif;font-size:38px;line-height:1.15;margin:8px 0 12px}
+    .selector p{color:#c9d6e7;margin:0}
+    .selector .kicker{color:var(--gold)}
+    .sel-prices{margin-top:22px;display:grid;gap:8px;font-size:15px;color:#c9d6e7}
+    .sel-prices b{color:#fff}
+    .sel-form{background:#fff;color:var(--ink);border-radius:18px;padding:24px}
+    fieldset{border:0;margin:0 0 18px;padding:0}
+    legend{font-weight:800;font-size:15px;color:#33445b;margin-bottom:10px;padding:0}
+    .pills{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .pill input{position:absolute;opacity:0;pointer-events:none}
+    .pill span{display:flex;align-items:center;justify-content:center;min-height:50px;padding:10px;border:1.5px solid #d3dae4;border-radius:12px;font-weight:650;font-size:15px;text-align:center;cursor:pointer;line-height:1.25}
+    .pill input:checked + span{border-color:var(--navy);background:#eef3fb;color:var(--navy);box-shadow:inset 0 0 0 1px var(--navy)}
+    .pill input:focus-visible + span{outline:3px solid var(--gold);outline-offset:2px}
+    .selector .sel-error{color:#b42318;font-size:14px;font-weight:600;margin:0 0 10px}
+    .selector .sel-note{font-size:13px;color:#5f6b7c;margin:10px 0 0;text-align:center}
+
+    /* Demos */
+    .demo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .demo{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;border:1px solid var(--border);background:#fff}
+    .video{position:relative;aspect-ratio:16/9;background:#0b1f3b;cursor:pointer;overflow:hidden}
+    .video img{width:100%;height:100%;object-fit:cover}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .play{position:absolute;inset:0;margin:auto;width:64px;height:46px;border-radius:12px;background:rgba(7,26,53,.85);display:grid;place-items:center}
+    .play:after{content:"";border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff;margin-left:4px}
+    .video:hover .play{background:#c4302b}
+    .video-soon{display:grid;place-items:center;text-align:center;padding:16px;color:#fff;cursor:default;background:linear-gradient(160deg,#0d2a52,#071a35)}
+    .video-soon b{display:block;font-size:20px;color:var(--gold);margin-bottom:4px}
+    .demo-body{display:flex;flex-direction:column;flex:1;padding:18px}
+    .demo-body h3{font-size:18px;color:var(--navy);margin-bottom:6px}
+    .demo-body p{margin:0 0 16px;color:var(--muted);font-size:15px}
+    .demo-body .btn{margin-top:auto}
+
+    /* Testimonials */
+    .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .t-card{margin:0;background:#fff;border:1px solid var(--border);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:18px}
+    .t-card blockquote{margin:0;font-size:17px;color:#2a3b54}
+    .t-card img{border-radius:12px;border:1px solid var(--border)}
+    .t-card figcaption{margin-top:auto;font-size:14px;color:var(--muted)}
+    .t-card figcaption b{display:block;color:var(--navy);font-size:15px}
+
+    /* Meet your teacher */
+    .meet{background:linear-gradient(180deg,var(--cream),#fff)}
+    .meet-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+    .meet-photo img{border-radius:22px;box-shadow:var(--shadow);width:100%;height:auto}
+    .meet h2{font-family:"Playfair Display",Georgia,serif;font-size:clamp(32px,4vw,46px);line-height:1.1;color:var(--navy);margin:8px 0 18px}
+    .meet p{font-size:18px;color:var(--muted);margin:0 0 18px}
+    .meet .key{font-size:18px;font-weight:700;color:var(--navy);border-left:4px solid var(--gold);padding:4px 0 4px 16px;margin:0 0 26px}
+    .meet-links{display:flex;gap:10px;flex-wrap:wrap}
+    .meet-brand{display:flex;align-items:center;gap:12px;margin-top:28px;padding-top:22px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+    .meet-brand img{height:40px;width:auto}
+    .meet-brand b{color:var(--navy)}
+
+    /* How it works */
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .step{padding:28px;border:1px solid var(--border);border-radius:18px;background:#fff}
-    .step-num{width:42px;height:42px;border-radius:999px;display:grid;place-items:center;background:var(--navy);color:var(--gold);font-weight:900;margin-bottom:16px}
-    .step h3{margin:0 0 8px;color:var(--navy)}
+    .step-num{width:42px;height:42px;border-radius:999px;display:grid;place-items:center;background:var(--navy);color:var(--gold);font-weight:800;margin-bottom:16px}
+    .step h3{font-size:19px;color:var(--navy);margin-bottom:8px}
     .step p{margin:0;color:var(--muted)}
-    .leadbox{background:linear-gradient(135deg,#071a35,#0d2f5e);border-radius:26px;color:#fff;padding:46px;display:grid;grid-template-columns:1fr .9fr;gap:38px;align-items:center;box-shadow:0 28px 80px rgba(7,26,53,.18)}
-    .leadbox h2{font-family:"Playfair Display",Georgia,serif;font-size:42px;line-height:1.12;margin:0 0 14px}
-    .leadbox p{color:#d1deed;font-size:17px}
-    .mini-form{background:#fff;border-radius:20px;padding:24px;color:var(--ink)}
-    .mini-form label{display:block;font-size:13px;font-weight:800;margin:12px 0 6px;color:#33445b}
-    .mini-form select,.mini-form input{width:100%;padding:13px 14px;border:1px solid #d6dce5;border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
-    .mini-form .btn{width:100%;margin-top:16px}
-    .mini-note{font-size:12px;color:#6d7889;margin:10px 0 0;text-align:center}
-    .faq{max-width:860px;margin:0 auto;display:grid;gap:12px}
-    details{border:1px solid var(--border);border-radius:14px;background:#fff;padding:18px 20px}
-    summary{cursor:pointer;font-weight:800;color:var(--navy)}
-    details p{color:var(--muted);margin:12px 0 0}
-    .final-cta{text-align:center;background:#fff7e4;border-top:1px solid #f2dfac}
-    .final-cta h2{font-family:"Playfair Display",Georgia,serif;font-size:46px;color:var(--navy);margin:0 0 12px}
-    .final-cta p{max-width:700px;margin:0 auto 24px;color:var(--muted);font-size:18px}
-    footer{background:#041429;color:#aebbd0;padding:34px 0;font-size:13px}
-    .footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .center{text-align:center;margin-top:34px}
+
+    /* FAQ */
+    .faq{max-width:840px;margin:0 auto;display:grid;gap:12px}
+    details{border:1px solid var(--border);border-radius:14px;background:#fff}
+    summary{cursor:pointer;font-weight:700;color:var(--navy);padding:18px 20px;list-style:none;display:flex;justify-content:space-between;gap:16px;font-size:17px}
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:"+";font-size:22px;line-height:1;color:var(--blue);flex:none}
+    details[open] summary:after{content:"–"}
+    details p{color:var(--muted);margin:0;padding:0 20px 18px}
+
+    /* Final CTA */
+    .final{text-align:center;background:var(--cream);border-top:1px solid #f0e3c0}
+    .final h2{font-family:"Playfair Display",Georgia,serif;font-size:clamp(34px,4.5vw,48px);color:var(--navy);margin-bottom:12px}
+    .final p{max-width:640px;margin:0 auto 26px;color:var(--muted);font-size:18px}
+    .final-options{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+    .final-options div{background:#fff;border:1px solid #eadfbf;border-radius:14px;padding:14px 20px;font-size:16px;color:var(--muted)}
+    .final-options b{color:var(--navy)}
+
+    /* Footer */
+    footer{background:#041429;color:#aebbd0;padding:36px 0;font-size:14px}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
     .footer-row b{color:#fff}
-    .floating-wa{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--green);color:#fff;width:58px;height:58px;border-radius:999px;display:grid;place-items:center;font-size:28px;box-shadow:0 14px 32px rgba(24,169,87,.34)}
-    @media(max-width:960px){
-      .navlinks{display:none}.hero-grid,.mentor-grid,.leadbox{grid-template-columns:1fr}.hero-card{margin:0 auto}.subjects{grid-template-columns:1fr 1fr}.demo-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr}.trust-grid{grid-template-columns:1fr 1fr}.choice-grid{grid-template-columns:1fr}.hero{padding-top:50px}.mentor-copy h2{font-size:40px}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer-links a:hover{color:#fff}
+
+    /* Floating / sticky WhatsApp */
+    .float-wa{position:fixed;right:20px;bottom:20px;z-index:60;display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;padding:14px 20px;border-radius:999px;font-weight:700;box-shadow:0 10px 26px rgba(18,136,74,.35)}
+    .float-wa:hover{background:var(--green-dark)}
+
+    @media(max-width:1020px){
+      .navlinks{display:none}
+      .subjects,.demo-grid{grid-template-columns:1fr 1fr}
+      .cred-grid{grid-template-columns:1fr 1fr}
+      .t-grid{grid-template-columns:1fr}
     }
-    @media(max-width:620px){
-      nav .btn-wa{display:none}.hero h1{font-size:44px}.hero .lead{font-size:18px}.credential-card{margin-top:14px;padding:18px}.credential-card h3{font-size:23px}.subjects{grid-template-columns:1fr}.trust-grid{grid-template-columns:1fr 1fr}.trust-item{border-bottom:1px solid var(--border)}.mentor-stats{grid-template-columns:1fr}.leadbox{padding:28px}.section-head h2,.final-cta h2{font-size:36px}.footer-row{flex-direction:column;align-items:flex-start}
+    @media(max-width:860px){
+      .hero-grid,.meet-grid,.selector{grid-template-columns:1fr}
+      .hero{padding:40px 0 48px}
+      .hero-grid{gap:32px}
+      .hero-figure{max-width:520px}
+      .price-grid,.steps{grid-template-columns:1fr}
+      .selector{padding:28px;gap:24px}
+      .selector h2{font-size:32px}
+      .meet-grid{gap:32px}
+      .meet-photo{max-width:440px}
+    }
+    @media(max-width:700px){
+      header{position:static}
+      nav{height:62px}
+      nav .btn{display:none}
+      .brand-logo{height:38px}
+      html{scroll-padding-top:12px}
+      section{padding:56px 0}
+      .section-head{margin-bottom:28px}
+      .section-head p{font-size:17px}
+      .hero-subjects{font-size:17px}
+      .hero-copy{font-size:17px}
+      .hero-actions .btn{width:100%}
+      .cred-grid,.subjects,.demo-grid{grid-template-columns:1fr}
+      .cred-head h2{font-size:23px}
+      .cred-links{width:100%}
+      .cred-links .btn{flex:1 1 0}
+      .price-card{padding:24px}
+      .price b{font-size:36px}
+      .compare table{display:none}
+      .compare-cards{display:grid;gap:14px}
+      .compare-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px}
+      .compare-card h3{font-size:19px;color:var(--navy);margin-bottom:10px}
+      .compare-card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:15px}
+      .compare-card dt{font-weight:700;color:var(--navy)}
+      .compare-card dd{margin:0;color:#33445b}
+      .meet p,.meet .key{font-size:17px}
+      .meet-links .btn{flex:1 1 0}
+      .final-options div{width:100%}
+      .footer-row{flex-direction:column;align-items:flex-start}
+      .announce{font-size:13px}
+      .announce .container{gap:2px 12px;padding:7px 0}
+      /* sticky bottom WhatsApp bar */
+      body{padding-bottom:78px}
+      .float-wa{left:12px;right:12px;bottom:12px;justify-content:center;min-height:54px;padding:12px;font-size:17px;border-radius:14px;transition:transform .2s,opacity .2s}
+      .float-wa.is-hidden{transform:translateY(90px);opacity:0;pointer-events:none}
     }
   </style>
 </head>
 <body>
-  <div class="topbar"><div class="container">Professor-led A/O Level tuition in <strong>Computer Science, English, Mathematics & Physics</strong></div></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.35-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .96-2.27.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.52 1.89 1.04.93 1.92 1.22 2.19 1.35.27.14.43.11.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.66-.17 1.34z"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+    <symbol id="i-yt" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></symbol>
+  </svg>
+
+  <div class="announce">
+    <div class="container">
+      <span>A/O Level Group &amp; Private Tuition Now Enrolling</span>
+      <a href="#enquire">Check Availability →</a>
+    </div>
+  </div>
+
   <header>
     <div class="container">
       <nav>
-        <a class="brand" href="#top"><img class="brand-logo" src="assets/logo.png" alt="The Digital Tutor logo"><span>The Digital Tutor</span></a>
-        <div class="navlinks"><a href="#subjects">Subjects</a><a href="#options">Group vs Private</a><a href="#demos">Demo Lessons</a><a href="#about">Your Tutor</a></div>
-        <a class="btn btn-wa" href="https://wa.me/16467044513?text=Hello%20Dr.%20Ibrahim%2C%20I%20am%20interested%20in%20A%2FO%20Level%20tuition." target="_blank" rel="noopener">WhatsApp Now</a>
+        <a class="brand" href="#top"><img class="brand-logo" src="assets/logo.png" alt="The Digital Tutor logo" width="166" height="115"><span>The Digital Tutor</span></a>
+        <div class="navlinks"><a href="#subjects">Subjects</a><a href="#fees">Group vs Private</a><a href="#demos">Demo Lessons</a><a href="#teacher">Your Teacher</a><a href="#faq">FAQ</a></div>
+        <a class="btn btn-wa btn-sm" data-wa="I would like information about A/O Level tuition." data-cta="header"><svg class="icon"><use href="#i-wa"/></svg>WhatsApp</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
+    <!-- 1. Hero -->
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">🎓 Learn directly with Dr. Ibrahim Malick, PhD</div>
-          <h1>Serious about better <span>A/O Level results?</span></h1>
-          <p class="lead">Get clear, structured, exam-focused tuition in <b>Computer Science, English, Mathematics and Physics</b> — in focused group classes or personalised 1-to-1 sessions.</p>
-          <div class="promise"><i>✓</i><span>Build concepts first, then turn them into marks with guided exam practice.</span></div>
-          <div class="promise"><i>✓</i><span>Choose the learning format that fits your child: group or private.</span></div>
-          <div class="promise"><i>✓</i><span>Watch full demo lessons before you decide.</span></div>
+          <div class="label">Professor-led • Group &amp; Private Tuition</div>
+          <h1>Learn A/O Levels Directly with <span>Dr. Ibrahim Malick, PhD</span></h1>
+          <p class="hero-subjects">Computer Science <span>•</span> Mathematics <span>•</span> English <span>•</span> Physics</p>
+          <p class="hero-copy">Clear concepts. Structured exam preparation. Focused past-paper practice. Watch a full lesson before you decide.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#demos">Watch Demo Lessons</a>
-            <a class="btn btn-wa" href="https://wa.me/16467044513?text=Hello%20Dr.%20Ibrahim%2C%20I%20would%20like%20details%20for%20A%2FO%20Level%20tuition." target="_blank" rel="noopener">Ask on WhatsApp</a>
+            <a class="btn btn-wa btn-lg" data-wa="I would like to check A/O Level classes and availability." data-cta="hero"><svg class="icon"><use href="#i-wa"/></svg>Check Classes &amp; Availability on WhatsApp</a>
+            <a class="btn btn-ghost btn-lg" href="#demos">Watch Demo Lessons</a>
           </div>
-          <div class="micro">No long form. Choose your subject and class type, then continue on WhatsApp.</div>
+          <div class="hero-prices"><span>Group: <b>PKR 10,000</b>/month per subject</span><span>Private 1-to-1: <b>PKR 3,000</b>/hour</span></div>
         </div>
-        <div class="hero-card">
-          <div class="hero-photo"><img src="assets/ibrahim%20uncle%20dp.png" alt="Dr. Ibrahim Malick, PhD"></div>
-          <div class="credential-card">
-            <div class="kicker">Professor-led tuition</div>
-            <h3>Dr. Ibrahim Malick, PhD</h3>
-            <p>Direct teaching, clear explanations, disciplined exam preparation and focused past-paper practice.</p>
-            <div class="cred-row"><span class="cred-icon">✓</span><span>Group & Private Classes</span></div>
-            <div class="cred-row"><span class="cred-icon">▶</span><span>Demo lessons available</span></div>
-          </div>
-        </div>
+        <figure class="hero-figure">
+          <img src="assets/ibrahim-hero.jpg" alt="Dr. Ibrahim Malick, PhD" width="430" height="239" fetchpriority="high">
+          <figcaption><b>Dr. Ibrahim Malick, PhD</b> — teaches every class personally</figcaption>
+        </figure>
       </div>
     </section>
 
-    <div class="trust">
-      <div class="container trust-grid">
-        <div class="trust-item"><b>Professor-led</b><span>Learn directly with Dr. Ibrahim Malick</span></div>
-        <div class="trust-item"><b>Concept + Exam Skills</b><span>Understand first, then apply</span></div>
-        <div class="trust-item"><b>Group or 1-to-1</b><span>Choose the right support level</span></div>
-        <div class="trust-item"><b>Demo Before Joining</b><span>See the teaching style yourself</span></div>
+    <!-- 2. Credibility strip -->
+    <div class="cred">
+      <div class="container">
+        <div class="cred-head">
+          <h2>Learn Directly with Dr. Ibrahim Malick, PhD</h2>
+          <div class="cred-links">
+            <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/in/ibrahimmalick/" target="_blank" rel="noopener" data-track="linkedin_click"><svg class="icon" style="color:#0a66c2"><use href="#i-in"/></svg>View LinkedIn Profile</a>
+            <a class="btn btn-outline btn-sm" href="https://www.youtube.com/@ibrahimmalick" target="_blank" rel="noopener" data-track="youtube_click"><svg class="icon" style="color:#e62117"><use href="#i-yt"/></svg>Watch The Digital Tutor on YouTube</a>
+          </div>
+        </div>
+        <div class="cred-grid">
+          <div class="cred-item"><span class="tick">✓</span>PhD-qualified educator</div>
+          <div class="cred-item"><span class="tick">✓</span>Academic leadership &amp; university teaching experience</div>
+          <div class="cred-item"><span class="tick">✓</span>25+ years of technology and professional experience</div>
+          <div class="cred-item"><span class="tick">✓</span>Structured Cambridge-focused preparation</div>
+        </div>
       </div>
     </div>
 
+    <!-- 3. Subjects -->
     <section id="subjects">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Four core subjects</div>
-          <h2>Focused tuition where strong concepts matter most</h2>
-          <p>Each subject combines explanation, guided practice and exam-oriented preparation.</p>
+          <div class="kicker">Four subjects</div>
+          <h2>Choose Your Subject</h2>
+          <p>Every subject is available as a group class or private 1-to-1 tuition, taught by Dr. Ibrahim Malick, PhD.</p>
         </div>
         <div class="subjects">
-          <div class="subject"><div class="icon">💻</div><h3>Computer Science</h3><p>Systems, algorithms, pseudocode, programming logic, trace tables, Boolean logic and past-paper strategy.</p></div>
-          <div class="subject"><div class="icon">📘</div><h3>English</h3><p>Reading, functional writing, language skills, question decoding, structure and exam technique.</p></div>
-          <div class="subject"><div class="icon">📐</div><h3>Mathematics</h3><p>Clear concepts, worked examples, problem-solving habits and systematic past-paper practice.</p></div>
-          <div class="subject"><div class="icon">⚛️</div><h3>Physics</h3><p>Core principles, diagrams, numericals, application questions and disciplined exam preparation.</p></div>
+          <div class="subject">
+            <div class="subject-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M9 9l-2 1.5L9 12M15 9l2 1.5-2 1.5"/></svg></div>
+            <h3>Computer Science</h3>
+            <p>Pseudocode, algorithms, programming, Boolean logic, theory, past papers and exam preparation.</p>
+            <div class="badges"><span class="badge">Group Classes Available</span><span class="badge">Private 1-to-1 Available</span></div>
+            <a class="btn btn-dark btn-block" data-wa="I am interested in O/A Level Computer Science tuition. Please send me the class details." data-cta="subject-computer-science" data-subject="Computer Science">Ask About This Subject</a>
+          </div>
+          <div class="subject">
+            <div class="subject-icon"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/></svg></div>
+            <h3>Mathematics</h3>
+            <p>Concept mastery, problem solving, worked examples, exam technique and past-paper practice.</p>
+            <div class="badges"><span class="badge">Group Classes Available</span><span class="badge">Private 1-to-1 Available</span></div>
+            <a class="btn btn-dark btn-block" data-wa="I am interested in O/A Level Mathematics tuition. Please send me the class details." data-cta="subject-mathematics" data-subject="Mathematics">Ask About This Subject</a>
+          </div>
+          <div class="subject">
+            <div class="subject-icon"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M19 19v2H6M9 8h6"/></svg></div>
+            <h3>English</h3>
+            <p>Reading, writing, comprehension, functional writing, exam technique and structured practice.</p>
+            <div class="badges"><span class="badge">Group Classes Available</span><span class="badge">Private 1-to-1 Available</span></div>
+            <a class="btn btn-dark btn-block" data-wa="I am interested in O/A Level English tuition. Please send me the class details." data-cta="subject-english" data-subject="English">Ask About This Subject</a>
+          </div>
+          <div class="subject">
+            <div class="subject-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(120 12 12)"/></svg></div>
+            <h3>Physics</h3>
+            <p>Conceptual understanding, calculations, problem solving and exam preparation.</p>
+            <div class="badges"><span class="badge">Group Classes Available</span><span class="badge">Private 1-to-1 Available</span></div>
+            <a class="btn btn-dark btn-block" data-wa="I am interested in O/A Level Physics tuition. Please send me the class details." data-cta="subject-physics" data-subject="Physics">Ask About This Subject</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="choose" id="options">
+    <!-- 4. Group vs Private + pricing -->
+    <section class="alt" id="fees">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Choose your format</div>
-          <h2>Group class or private 1-to-1?</h2>
-          <p>Both are professor-led. The difference is how much individual attention and customisation your child needs.</p>
+          <div class="kicker">Group vs Private</div>
+          <h2>Choose the Tuition Format That Fits the Student</h2>
+          <p>Group classes are ideal for structured ongoing preparation. Private lessons are designed for students who need personalised attention, targeted improvement or intensive exam preparation.</p>
         </div>
-        <div class="choice-grid">
-          <div class="choice">
+        <div class="price-grid">
+          <div class="price-card">
             <h3>Group Classes</h3>
-            <div class="sub">For students who want structure, momentum and a focused learning environment.</div>
+            <div class="fit">Best for structured ongoing preparation</div>
+            <div class="price"><b>PKR 10,000</b><span>per subject / month</span></div>
             <ul class="checks">
-              <li>Live structured teaching</li>
-              <li>Clear syllabus progression</li>
-              <li>Regular question practice</li>
-              <li>Peer learning and accountability</li>
-              <li>More affordable than private tuition</li>
+              <li>Structured syllabus coverage</li>
+              <li>Regular lessons</li>
+              <li>Concept teaching</li>
+              <li>Exam practice</li>
+              <li>Past-paper preparation</li>
+              <li>Best for ongoing study</li>
+              <li class="teacher">Taught by Dr. Ibrahim Malick, PhD</li>
             </ul>
-            <a class="btn btn-dark" href="https://wa.me/16467044513?text=Hello%20Dr.%20Ibrahim%2C%20I%20am%20interested%20in%20GROUP%20A%2FO%20Level%20classes.%20Please%20send%20the%20schedule%20and%20fee%20details." target="_blank" rel="noopener">Get Group Class Details</a>
+            <a class="btn btn-wa btn-lg btn-block" data-wa="I am interested in Group A/O Level tuition at PKR 10,000 per subject per month. Please send me the schedule and availability." data-cta="pricing-group" data-format="group"><svg class="icon"><use href="#i-wa"/></svg>Join a Group Class</a>
           </div>
-          <div class="choice highlight">
-            <span class="tag">MOST PERSONALISED</span>
-            <h3>Private 1-to-1</h3>
-            <div class="sub">For students who need targeted support, accelerated progress or help with specific weak areas.</div>
+          <div class="price-card featured">
+            <h3>Private 1-to-1 Tuition</h3>
+            <div class="fit">Best for personalised or intensive support</div>
+            <div class="price"><b>PKR 3,000</b><span>per hour</span></div>
             <ul class="checks">
-              <li>Individual diagnostic attention</li>
-              <li>Lesson pace matched to the student</li>
-              <li>Targeted weak-area intervention</li>
-              <li>Focused exam and past-paper strategy</li>
-              <li>Direct feedback throughout the lesson</li>
+              <li>Individual attention</li>
+              <li>Student-specific pace</li>
+              <li>Weak-topic recovery</li>
+              <li>Targeted past-paper practice</li>
+              <li>Exam preparation</li>
+              <li>Flexible academic focus</li>
+              <li class="teacher">Taught personally by Dr. Ibrahim Malick, PhD</li>
             </ul>
-            <a class="btn btn-primary" href="https://wa.me/16467044513?text=Hello%20Dr.%20Ibrahim%2C%20I%20am%20interested%20in%20PRIVATE%201-to-1%20A%2FO%20Level%20tuition.%20Please%20send%20the%20available%20times%20and%20fee%20details." target="_blank" rel="noopener">Ask About Private Tuition</a>
+            <a class="btn btn-wa btn-lg btn-block" data-wa="I am interested in Private A/O Level tuition at PKR 3,000 per hour. Please send me availability and next steps." data-cta="pricing-private" data-format="private"><svg class="icon"><use href="#i-wa"/></svg>Book a Private Lesson</a>
+          </div>
+        </div>
+
+        <div class="compare">
+          <table>
+            <thead><tr><th scope="col">Feature</th><th scope="col">Group Classes</th><th scope="col">Private 1-to-1</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Price</th><td>PKR 10,000/month per subject</td><td>PKR 3,000/hour</td></tr>
+              <tr><th scope="row">Best for</th><td>Ongoing syllabus preparation</td><td>Personalised or intensive support</td></tr>
+              <tr><th scope="row">Pace</th><td>Structured group pace</td><td>Student-specific pace</td></tr>
+              <tr><th scope="row">Attention</th><td>Group teaching</td><td>Dedicated 1-to-1</td></tr>
+              <tr><th scope="row">Past Papers</th><td>Included</td><td>Highly targeted</td></tr>
+              <tr><th scope="row">Teacher</th><td>Dr. Ibrahim Malick, PhD</td><td>Dr. Ibrahim Malick, PhD</td></tr>
+            </tbody>
+          </table>
+          <div class="compare-cards">
+            <div class="compare-card">
+              <h3>Group Classes</h3>
+              <dl>
+                <dt>Price</dt><dd>PKR 10,000/month per subject</dd>
+                <dt>Best for</dt><dd>Ongoing syllabus preparation</dd>
+                <dt>Pace</dt><dd>Structured group pace</dd>
+                <dt>Attention</dt><dd>Group teaching</dd>
+                <dt>Past Papers</dt><dd>Included</dd>
+                <dt>Teacher</dt><dd>Dr. Ibrahim Malick, PhD</dd>
+              </dl>
+            </div>
+            <div class="compare-card">
+              <h3>Private 1-to-1</h3>
+              <dl>
+                <dt>Price</dt><dd>PKR 3,000/hour</dd>
+                <dt>Best for</dt><dd>Personalised or intensive support</dd>
+                <dt>Pace</dt><dd>Student-specific pace</dd>
+                <dt>Attention</dt><dd>Dedicated 1-to-1</dd>
+                <dt>Past Papers</dt><dd>Highly targeted</dd>
+                <dt>Teacher</dt><dd>Dr. Ibrahim Malick, PhD</dd>
+              </dl>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="demos">
+    <!-- 5. Quick WhatsApp selector -->
+    <section id="enquire">
       <div class="container">
-        <div class="section-head">
-          <div class="kicker">See the teaching before you join</div>
-          <h2>Watch a complete demo lesson</h2>
-          <p>Don't decide from an advertisement alone. Watch the teaching style and decide whether it is right for your child.</p>
-        </div>
-        <div class="demo-grid">
-          <div class="demo">
-            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/DdwQ5Flo1L4" title="Computer Science demo lesson" loading="lazy" allowfullscreen></iframe></div>
-            <div class="demo-body"><h3>Computer Science Demo</h3><p>See how complex concepts are broken into clear, memorable steps.</p></div>
-          </div>
-          <div class="demo">
-            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/VlTDpLwDoOQ" title="Mathematics demo lesson" loading="lazy" allowfullscreen></iframe></div>
-            <div class="demo-body"><h3>Mathematics Demo</h3><p>Watch the concept-first approach used before moving into exam-style application.</p></div>
-          </div>
-          <div class="demo">
-            <div class="video-wrap"><iframe src="https://www.youtube.com/embed/XR-owmM2z9o" title="English demo lesson" loading="lazy" allowfullscreen></iframe></div>
-            <div class="demo-body"><h3>English Demo</h3><p>See the focus on decoding the task, structure, clarity and exam technique.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mentor" id="about">
-      <div class="container mentor-grid">
-        <div class="mentor-photo"><img src="assets/ibrahim-seated.png" alt="Dr. Ibrahim Malick teaching"></div>
-        <div class="mentor-copy">
-          <div class="section-head" style="text-align:left;margin:0">
-            <div class="kicker">Your tutor</div>
-          </div>
-          <h2>Learn with Dr. Ibrahim Malick, PhD</h2>
-          <p>The teaching philosophy is simple: students remember more when they understand <em>why</em> something works. Lessons therefore start with the mental model, build the technical language, and then move into examination-style application.</p>
-          <p>For private tuition, the same approach becomes highly targeted: identify the weak area, diagnose the misconception, rebuild the concept and practise until the student can apply it independently.</p>
-          <div class="mentor-stats">
-            <div class="mentor-stat"><b>Direct teaching</b><span>No hand-off to a junior instructor</span></div>
-            <div class="mentor-stat"><b>Exam-focused</b><span>Practice tied to how questions are asked</span></div>
-            <div class="mentor-stat"><b>Clear structure</b><span>Concept → practice → exam technique</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-head">
-          <div class="kicker">Simple next step</div>
-          <h2>From enquiry to the right class in three steps</h2>
-        </div>
-        <div class="process-grid">
-          <div class="step"><div class="step-num">1</div><h3>Watch a demo</h3><p>See the teaching style for Computer Science, Mathematics or English.</p></div>
-          <div class="step"><div class="step-num">2</div><h3>Choose Group or Private</h3><p>Select the level of structure and individual attention your child needs.</p></div>
-          <div class="step"><div class="step-num">3</div><h3>Continue on WhatsApp</h3><p>Send the subject and level. Receive the relevant schedule, fee and joining details.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="leadbox">
+        <div class="selector">
           <div>
-            <h2>Tell us what your child needs. We'll take it from there.</h2>
-            <p>Select the level, subject and class type. The button will open WhatsApp with your choices already filled in.</p>
+            <div class="kicker">Quick enquiry</div>
+            <h2>Tell Us What You Need</h2>
+            <p>Choose the level, subject and tuition type. WhatsApp opens with your message ready — you review it before sending.</p>
+            <div class="sel-prices">
+              <div>Group Classes: <b>PKR 10,000</b>/month per subject</div>
+              <div>Private 1-to-1: <b>PKR 3,000</b>/hour</div>
+            </div>
           </div>
-          <form class="mini-form" id="leadForm">
-            <label for="level">Level</label>
-            <select id="level" required><option value="O Level">O Level</option><option value="A Level">A Level</option></select>
-            <label for="subject">Subject</label>
-            <select id="subject" required><option>Computer Science</option><option>English</option><option>Mathematics</option><option>Physics</option></select>
-            <label for="format">Class type</label>
-            <select id="format" required><option>Group Classes</option><option>Private 1-to-1 Tuition</option><option>Not sure — please advise</option></select>
-            <button class="btn btn-wa" type="submit">Continue on WhatsApp</button>
-            <p class="mini-note">You will review the message before sending it.</p>
+          <form class="sel-form" id="leadForm" novalidate>
+            <fieldset>
+              <legend>Level</legend>
+              <div class="pills">
+                <label class="pill"><input type="radio" name="level" value="O Level"><span>O Level</span></label>
+                <label class="pill"><input type="radio" name="level" value="A Level"><span>A Level</span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Subject</legend>
+              <div class="pills">
+                <label class="pill"><input type="radio" name="subject" value="Computer Science"><span>Computer Science</span></label>
+                <label class="pill"><input type="radio" name="subject" value="Mathematics"><span>Mathematics</span></label>
+                <label class="pill"><input type="radio" name="subject" value="English"><span>English</span></label>
+                <label class="pill"><input type="radio" name="subject" value="Physics"><span>Physics</span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Tuition Type</legend>
+              <div class="pills">
+                <label class="pill"><input type="radio" name="format" value="group"><span>Group Classes</span></label>
+                <label class="pill"><input type="radio" name="format" value="private"><span>Private 1&#8209;to&#8209;1</span></label>
+              </div>
+            </fieldset>
+            <p class="sel-error" id="selError" role="alert" hidden>Please choose a level, subject and tuition type.</p>
+            <button class="btn btn-wa btn-lg btn-block" type="submit"><svg class="icon"><use href="#i-wa"/></svg>Get Schedule &amp; Availability on WhatsApp</button>
+            <p class="sel-note">Opens WhatsApp. Nothing is sent until you press send.</p>
           </form>
         </div>
       </div>
     </section>
 
-    <section>
+    <!-- 6. Demo lessons -->
+    <section class="alt" id="demos">
       <div class="container">
-        <div class="section-head"><div class="kicker">Frequently asked questions</div><h2>What parents usually ask</h2></div>
-        <div class="faq">
-          <details><summary>Do you teach both O Level and A Level?</summary><p>Yes. Use the WhatsApp enquiry to specify the student's level and subject so the relevant class information can be shared.</p></details>
-          <details><summary>Can we watch a class before deciding?</summary><p>Yes. Demo lessons for Computer Science, Mathematics and English are embedded above so you can evaluate the teaching style first.</p></details>
-          <details><summary>What is the difference between group and private tuition?</summary><p>Group classes follow a structured class pathway. Private tuition is more customised and is better suited to targeted weak areas, individual pacing or intensive exam preparation.</p></details>
-          <details><summary>How do I get fees and the current schedule?</summary><p>Send a WhatsApp message with the student's level, subject and whether you prefer group or private tuition. You will receive the relevant current details.</p></details>
-          <details><summary>What if my child is weak in only one topic?</summary><p>Private 1-to-1 tuition can be used for focused support in a specific area, such as pseudocode and trace tables in Computer Science or a particular Mathematics topic.</p></details>
+        <div class="section-head">
+          <div class="kicker">Demo lessons</div>
+          <h2>Watch the Teaching Before You Decide</h2>
+          <p>Before enrolling, watch a real lesson and see the teaching style for yourself.</p>
+        </div>
+        <div class="demo-grid">
+          <div class="demo">
+            <div class="video" data-yt="DdwQ5Flo1L4" data-subject="Computer Science" role="button" tabindex="0" aria-label="Play Computer Science demo lesson">
+              <img src="https://i.ytimg.com/vi/DdwQ5Flo1L4/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play"></span>
+            </div>
+            <div class="demo-body"><h3>Computer Science</h3><p>See how complex concepts are broken into clear, memorable steps.</p><button class="btn btn-outline btn-block" type="button" data-play="DdwQ5Flo1L4">▶ Watch Computer Science Demo</button></div>
+          </div>
+          <div class="demo">
+            <div class="video" data-yt="VlTDpLwDoOQ" data-subject="Mathematics" role="button" tabindex="0" aria-label="Play Mathematics demo lesson">
+              <img src="https://i.ytimg.com/vi/VlTDpLwDoOQ/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play"></span>
+            </div>
+            <div class="demo-body"><h3>Mathematics</h3><p>The concept-first approach, followed by exam-style application.</p><button class="btn btn-outline btn-block" type="button" data-play="VlTDpLwDoOQ">▶ Watch Mathematics Demo</button></div>
+          </div>
+          <div class="demo">
+            <div class="video" data-yt="XR-owmM2z9o" data-subject="English" role="button" tabindex="0" aria-label="Play English demo lesson">
+              <img src="https://i.ytimg.com/vi/XR-owmM2z9o/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play"></span>
+            </div>
+            <div class="demo-body"><h3>English</h3><p>Decoding the task, structure, clarity and exam technique.</p><button class="btn btn-outline btn-block" type="button" data-play="XR-owmM2z9o">▶ Watch English Demo</button></div>
+          </div>
+          <div class="demo">
+            <div class="video video-soon"><div><b>Physics</b>Sample lesson on request</div></div>
+            <div class="demo-body"><h3>Physics</h3><p>Physics sample lesson available on request.</p><a class="btn btn-wa btn-block" data-wa="I would like to request a Physics sample lesson." data-cta="demo-physics-request" data-subject="Physics"><svg class="icon"><use href="#i-wa"/></svg>Request Physics Demo on WhatsApp</a></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="final-cta">
+    <!-- 7. Testimonials
+         Hidden until real feedback is supplied. To publish: fill in the three cards
+         below, then delete the `hidden` attribute on this <section>.
+         For a WhatsApp screenshot, replace the <blockquote> with:
+           <img src="assets/feedback-1.jpg" alt="WhatsApp feedback from a parent" loading="lazy"> -->
+    <section id="testimonials" hidden>
       <div class="container">
-        <h2>If better results matter, start with the right support.</h2>
-        <p>Choose a subject, watch a demo and message directly for the latest group or private tuition availability.</p>
-        <a class="btn btn-wa" href="https://wa.me/16467044513?text=Hello%20Dr.%20Ibrahim%2C%20I%20would%20like%20to%20discuss%20A%2FO%20Level%20tuition%20for%20my%20child." target="_blank" rel="noopener">Message Dr. Ibrahim on WhatsApp</a>
+        <div class="section-head">
+          <div class="kicker">Feedback</div>
+          <h2>What Students &amp; Parents Say</h2>
+        </div>
+        <div class="t-grid">
+          <figure class="t-card">
+            <blockquote>“Testimonial text.”</blockquote>
+            <figcaption><b>Name or initials</b>Subject · O Level</figcaption>
+          </figure>
+          <figure class="t-card">
+            <blockquote>“Testimonial text.”</blockquote>
+            <figcaption><b>Name or initials</b>Subject · A Level</figcaption>
+          </figure>
+          <figure class="t-card">
+            <blockquote>“Testimonial text.”</blockquote>
+            <figcaption><b>Name or initials</b>Subject · O Level</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Meet your teacher -->
+    <section class="meet" id="teacher">
+      <div class="container meet-grid">
+        <div class="meet-photo"><img src="assets/ibrahim-seated.jpg" alt="Dr. Ibrahim Malick, PhD" width="800" height="800" loading="lazy" decoding="async"></div>
+        <div>
+          <div class="kicker">Meet Your Teacher</div>
+          <h2>Dr. Ibrahim Malick, PhD</h2>
+          <p>Students enrolling through this page are taught directly by Dr. Ibrahim Malick. The goal is not simply to complete the syllabus, but to build strong concepts, improve examination technique and develop the confidence to solve unfamiliar questions.</p>
+          <p class="key">The person you see here is the person who teaches your child.</p>
+          <div class="meet-links">
+            <a class="btn btn-outline" href="https://www.linkedin.com/in/ibrahimmalick/" target="_blank" rel="noopener" data-track="linkedin_click"><svg class="icon" style="color:#0a66c2"><use href="#i-in"/></svg>LinkedIn</a>
+            <a class="btn btn-outline" href="https://www.youtube.com/@ibrahimmalick" target="_blank" rel="noopener" data-track="youtube_click"><svg class="icon" style="color:#e62117"><use href="#i-yt"/></svg>YouTube</a>
+          </div>
+          <div class="meet-brand"><img src="assets/logo.png" alt="The Digital Tutor logo" width="166" height="115" loading="lazy"><span><b>The Digital Tutor</b><br>Professor-led A/O Level tuition</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. How it works -->
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">How it works</div>
+          <h2>Three Simple Steps</h2>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><h3>Choose Your Subject</h3><p>Computer Science, Mathematics, English or Physics.</p></div>
+          <div class="step"><div class="step-num">2</div><h3>Choose Group or Private</h3><p>Group: PKR 10,000/month per subject.<br>Private: PKR 3,000/hour.</p></div>
+          <div class="step"><div class="step-num">3</div><h3>Continue on WhatsApp</h3><p>Receive the current schedule, availability and joining details.</p></div>
+        </div>
+        <div class="center"><a class="btn btn-wa btn-lg" data-wa="I would like to get started with A/O Level tuition. Please send me the schedule and availability." data-cta="how-it-works"><svg class="icon"><use href="#i-wa"/></svg>Start on WhatsApp</a></div>
+      </div>
+    </section>
+
+    <!-- 10. FAQ -->
+    <section class="alt" id="faq">
+      <div class="container">
+        <div class="section-head"><div class="kicker">FAQ</div><h2>Frequently Asked Questions</h2></div>
+        <div class="faq">
+          <details><summary>Who teaches the classes?</summary><p>Classes advertised on this page are taught directly by Dr. Ibrahim Malick, PhD.</p></details>
+          <details><summary>How much are Group Classes?</summary><p>Group tuition is PKR 10,000 per subject per month.</p></details>
+          <details><summary>How much is Private Tuition?</summary><p>Private 1-to-1 tuition is PKR 3,000 per hour.</p></details>
+          <details><summary>Should I choose Group or Private tuition?</summary><p>Group classes are best for students who want structured ongoing syllabus and exam preparation. Private tuition is best for targeted weaknesses, individual pacing, intensive exam preparation or specific problem areas.</p></details>
+          <details><summary>Can I watch a lesson before enrolling?</summary><p>Yes. Full demo lessons for Computer Science, Mathematics and English are available directly on this page.</p></details>
+          <details><summary>Are both O Level and A Level students accepted?</summary><p>Yes, depending on the subject and current availability.</p></details>
+          <details><summary>Can Private Tuition focus only on weak topics?</summary><p>Yes. Private sessions can focus on specific topics, past papers, exam technique or areas where the student needs additional support.</p></details>
+          <details><summary>Is Physics available?</summary><p>Yes. Group and Private Physics tuition is available. A sample lesson can be requested through WhatsApp.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Final CTA -->
+    <section class="final">
+      <div class="container">
+        <h2>Ready to Start?</h2>
+        <p>Choose your subject, choose Group or Private tuition, and message us on WhatsApp. We will send you the current schedule and availability.</p>
+        <div class="final-options">
+          <div><b>Group Classes</b> — PKR 10,000/month per subject</div>
+          <div><b>Private 1-to-1</b> — PKR 3,000/hour</div>
+        </div>
+        <a class="btn btn-wa btn-lg" data-wa="I am ready to start A/O Level tuition. Please send me the current schedule and availability." data-cta="final"><svg class="icon"><use href="#i-wa"/></svg>Check Availability on WhatsApp</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-row"><div><b>The Digital Tutor</b><br>Professor-led A/O Level tuition</div><div>Computer Science · English · Mathematics · Physics</div></div>
+    <div class="container footer-row">
+      <div><b>The Digital Tutor</b><br>Professor-led A/O Level tuition with Dr. Ibrahim Malick, PhD</div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/ibrahimmalick/" target="_blank" rel="noopener" data-track="linkedin_click">LinkedIn</a>
+        <a href="https://www.youtube.com/@ibrahimmalick" target="_blank" rel="noopener" data-track="youtube_click">YouTube</a>
+        <a data-wa="I would like information about A/O Level tuition." data-cta="footer">WhatsApp</a>
+      </div>
+    </div>
   </footer>
-  <a class="floating-wa" aria-label="WhatsApp" href="https://wa.me/16467044513?text=Hello%20Dr.%20Ibrahim%2C%20I%20am%20interested%20in%20A%2FO%20Level%20tuition." target="_blank" rel="noopener">☎</a>
+
+  <a class="float-wa" data-wa="Please share the current availability for A/O Level tuition." data-cta="sticky"><svg class="icon"><use href="#i-wa"/></svg>WhatsApp — Check Availability</a>
+
   <script>
-    document.getElementById('leadForm').addEventListener('submit', function(e){
+    var WA_NUMBER = '16467044513';
+    // Every message starts with this so enquiries can be traced to the landing page.
+    var WA_PREFIX = 'Hello, I came from the A/O Level landing page. ';
+    var PRICES = { group: 'PKR 10,000/month per subject', private: 'PKR 3,000/hour' };
+    var FORMAT_LABELS = { group: 'Group', private: 'Private 1-to-1' };
+
+    function waUrl(message) {
+      return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_PREFIX + message);
+    }
+
+    function trackWhatsApp(params, format) {
+      if (format === 'group') track('group_class_click', params);
+      if (format === 'private') track('private_tuition_click', params);
+      track('whatsapp_click', params, 'Contact');
+    }
+
+    // WhatsApp links: each carries its own message (data-wa) and source label (data-cta).
+    document.querySelectorAll('[data-wa]').forEach(function (a) {
+      a.href = waUrl(a.dataset.wa);
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.addEventListener('click', function () {
+        var params = { cta: a.dataset.cta };
+        if (a.dataset.subject) {
+          params.subject = a.dataset.subject;
+          track('subject_select', { subject: a.dataset.subject, source: a.dataset.cta });
+        }
+        if (a.dataset.cta === 'demo-physics-request') track('demo_click', { subject: 'Physics', type: 'request' });
+        trackWhatsApp(params, a.dataset.format);
+      });
+    });
+
+    document.querySelectorAll('[data-track]').forEach(function (a) {
+      a.addEventListener('click', function () { track(a.dataset.track); });
+    });
+
+    // Demo videos: show a thumbnail, load the YouTube player only when played.
+    function playVideo(box) {
+      if (box.querySelector('iframe')) return;
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + box.dataset.yt + '?autoplay=1&rel=0';
+      iframe.title = box.dataset.subject + ' demo lesson';
+      iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      box.innerHTML = '';
+      box.appendChild(iframe);
+      box.removeAttribute('role');
+      box.removeAttribute('tabindex');
+      track('demo_click', { subject: box.dataset.subject });
+    }
+    document.querySelectorAll('.video[data-yt]').forEach(function (box) {
+      box.addEventListener('click', function () { playVideo(box); });
+      box.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playVideo(box); }
+      });
+    });
+    document.querySelectorAll('[data-play]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var box = document.querySelector('.video[data-yt="' + btn.dataset.play + '"]');
+        box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        playVideo(box);
+      });
+    });
+
+    // Mobile sticky bar stays hidden while the hero's own WhatsApp button is on screen.
+    var sticky = document.querySelector('.float-wa');
+    if ('IntersectionObserver' in window) {
+      sticky.classList.add('is-hidden');
+      new IntersectionObserver(function (entries) {
+        sticky.classList.toggle('is-hidden', entries[0].isIntersecting);
+      }).observe(document.querySelector('.hero-actions'));
+    }
+
+    // Quick selector
+    var form = document.getElementById('leadForm');
+    form.addEventListener('change', function (e) {
+      if (e.target.name === 'subject') track('subject_select', { subject: e.target.value, source: 'selector' });
+    });
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      const level = document.getElementById('level').value;
-      const subject = document.getElementById('subject').value;
-      const format = document.getElementById('format').value;
-      const text = `Hello Dr. Ibrahim, I am interested in A/O Level tuition.\n\nLevel: ${level}\nSubject: ${subject}\nClass type: ${format}\n\nPlease send me the relevant schedule and fee details.`;
-      window.open('https://wa.me/16467044513?text=' + encodeURIComponent(text), '_blank');
+      var level = form.level.value, subject = form.subject.value, format = form.format.value;
+      var error = document.getElementById('selError');
+      if (!level || !subject || !format) { error.hidden = false; return; }
+      error.hidden = true;
+
+      var message = 'I am interested in ' + level + ' ' + subject + ' ' + FORMAT_LABELS[format] +
+        ' tuition (' + PRICES[format] + '). Please send me the schedule and availability.';
+      var params = { cta: 'selector', level: level, subject: subject, format: format };
+      track('lead_selector_complete', params, 'Lead');
+      trackWhatsApp(params, format);
+
+      var url = waUrl(message);
+      if (!window.open(url, '_blank')) window.location.href = url;
     });
   </script>
 </body>
