@@ -6,7 +6,7 @@ Files:
 - assets/ibrahim-seated.png — tutor profile image
 
 Built-in:
-- WhatsApp CTAs to +1 646 704 4513
+- WhatsApp CTAs to +92 331 6663291
 - Group-class and private-tuition prefilled WhatsApp messages
 - Embedded YouTube demos for Computer Science, Mathematics, and English
 - Mobile-responsive design
