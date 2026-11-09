@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Structured online Cambridge and Pearson Edexcel tuition for homeschooled students and private candidates in Pakistan.">
+  <title>Homeschool & Private Candidate Tuition | The Digital Tutor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #071d37;
+      --navy-2: #0d2a4f;
+      --gold: #e7bd60;
+      --cream: #fcf8ed;
+      --paper: #fffdf8;
+      --ink: #14243a;
+      --muted: #657186;
+      --line: #e9e3d6;
+      --green: #15864f;
+      --green-dark: #116e41;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --shadow: 0 18px 48px rgba(8, 30, 56, .09);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .announcement { min-height: 38px; background: #061426; color: #f5f6f8; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 6px 15px; text-align: center; }
+    .announcement a { color: var(--gold); font-weight: 700; }
+    header { background: #fff; border-bottom: 1px solid rgba(7,29,55,.08); position: sticky; top: 0; z-index: 10; }
+    .nav { height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 700; font-size: 17px; white-space: nowrap; }
+    .brand img { width: 52px; height: 45px; object-fit: contain; }
+    .navlinks { display: flex; align-items: center; gap: 25px; font-size: 14px; font-weight: 600; color: #38465a; }
+    .navlinks a:hover { color: #a77c20; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 48px; border-radius: 11px; padding: 12px 20px; border: 1px solid transparent; font: 700 15px var(--sans); cursor: pointer; transition: .18s ease; }
+    .btn-green { background: var(--green); color: white; box-shadow: 0 7px 18px rgba(21,134,79,.18); }
+    .btn-green:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .btn-outline { border-color: rgba(255,255,255,.4); color: white; background: transparent; }
+    .btn-outline:hover { background: rgba(255,255,255,.08); }
+    .btn-light { background: white; color: var(--navy); border-color: var(--line); }
+    .eyebrow { color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    h1,h2,h3 { font-family: var(--serif); line-height: 1.12; margin: 0; }
+    h1 { color: white; font-size: clamp(42px, 5.4vw, 68px); letter-spacing: -.035em; max-width: 690px; }
+    h1 span { color: var(--gold); }
+    h2 { font-size: clamp(32px, 4vw, 45px); color: var(--navy); letter-spacing: -.025em; }
+    h3 { font-size: 23px; color: var(--navy); }
+    .hero { background: radial-gradient(ellipse at 78% 22%, rgba(31,77,127,.4), transparent 38%), linear-gradient(120deg, #071a32, #0a2443 68%, #0b2c53); color: white; overflow: hidden; }
+    .hero-grid { min-height: 620px; padding: 74px 0 72px; display: grid; grid-template-columns: 1.12fr .88fr; align-items: center; gap: 54px; }
+    .hero .eyebrow { margin-bottom: 19px; }
+    .hero-copy { max-width: 650px; }
+    .hero-copy > p { color: #d4deea; font-size: 18px; max-width: 625px; margin: 22px 0 24px; }
+    .subject-line { color: #fff; font-size: 15px; font-weight: 700; margin-top: 20px; }
+    .subject-line b { color: var(--gold); padding: 0 5px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 22px; }
+    .price-note { color: #d4deea; font-size: 14px; }
+    .price-note strong { color: white; }
+    .hero-photo { position: relative; }
+    .hero-photo img { display: block; width: 100%; aspect-ratio: 1.35; object-fit: cover; object-position: center 38%; border-radius: 19px; box-shadow: 0 30px 60px rgba(0,0,0,.25); }
+    .photo-caption { text-align: center; font-size: 14px; color: #dbe4ef; margin-top: 12px; }
+    .board-tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
+    .board-tag { border: 1px solid rgba(255,255,255,.24); color: #f8f5eb; background: rgba(255,255,255,.06); border-radius: 99px; padding: 6px 12px; font-size: 12px; font-weight: 700; }
+    section { padding: 82px 0; }
+    .cream { background: var(--cream); }
+    .section-head { max-width: 760px; margin: 0 auto 39px; text-align: center; }
+    .section-head .eyebrow { color: #ae8327; margin-bottom: 12px; }
+    .section-head p { color: var(--muted); margin: 15px auto 0; max-width: 680px; }
+    .promise-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .promise { background: rgba(255,255,255,.74); border: 1px solid var(--line); border-radius: var(--radius); padding: 25px; }
+    .icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: #f6edcf; color: #a77c20; font-size: 18px; font-weight: 800; margin-bottom: 16px; }
+    .promise p,.card p { color: var(--muted); margin: 9px 0 0; }
+    .board-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 22px; }
+    .board-card { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: white; box-shadow: 0 10px 28px rgba(8,30,56,.04); }
+    .board-card .eyebrow { color: #ad8124; margin-bottom: 10px; }
+    .board-card ul { padding: 0; list-style: none; margin: 18px 0 0; display: grid; gap: 8px; color: #46546a; }
+    .board-card li::before { content: "✓"; color: var(--green); font-weight: 800; margin-right: 9px; }
+    .board-note { font-size: 13px; margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); }
+    .subjects { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+    .subject { border: 1px solid var(--line); background: white; border-radius: 16px; padding: 23px 20px; }
+    .subject .icon { width: 38px; height: 38px; font-size: 14px; }
+    .subject h3 { font-size: 21px; }
+    .subject p { font-size: 14px; color: var(--muted); margin: 8px 0 0; }
+    .steps { counter-reset: steps; display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .step { position: relative; background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 27px; }
+    .step-no { font: 700 34px var(--serif); color: #d0a641; margin-bottom: 12px; }
+    .step p { color: var(--muted); margin: 8px 0 0; }
+    .pricing { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 860px; margin: 0 auto; }
+    .price-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; background: white; box-shadow: var(--shadow); }
+    .price-card.featured { border: 2px solid var(--gold); }
+    .price-card .eyebrow { color: #ad8124; }
+    .price { color: var(--navy); font: 700 35px var(--serif); margin: 14px 0 2px; }
+    .price small { font: 500 14px var(--sans); color: var(--muted); }
+    .price-card ul { list-style: none; margin: 20px 0 24px; padding: 0; display: grid; gap: 9px; color: #48566b; font-size: 14px; }
+    .price-card li::before { content: "✓"; margin-right: 9px; color: var(--green); font-weight: 800; }
+    .teacher { display: grid; grid-template-columns: .7fr 1.3fr; gap: 40px; align-items: center; }
+    .teacher img { width: 100%; max-height: 360px; object-fit: cover; object-position: center 35%; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .teacher-copy .eyebrow { color: #ad8124; margin-bottom: 10px; }
+    .teacher-copy p { color: var(--muted); }
+    .teacher-points { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-top: 20px; }
+    .teacher-points div { background: var(--cream); border-radius: 10px; padding: 12px; font-size: 14px; font-weight: 600; }
+    .notice { border-left: 4px solid var(--gold); padding: 17px 20px; background: #fff7df; color: #62522b; border-radius: 0 12px 12px 0; font-size: 14px; margin-top: 25px; }
+    .faq { max-width: 850px; margin: 0 auto; }
+    details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    summary { cursor: pointer; font-weight: 700; color: var(--navy); list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: #ad8124; font-size: 20px; line-height: 1; }
+    details[open] summary::after { content: "−"; }
+    details p { color: var(--muted); margin: 12px 28px 0 0; }
+    .final-cta { background: linear-gradient(120deg, #071a32, #0b2c53); color: white; text-align: center; padding: 72px 20px; }
+    .final-cta h2 { color: white; }
+    .final-cta p { max-width: 650px; color: #d4deea; margin: 15px auto 24px; }
+    footer { padding: 28px 0; background: #061426; color: #d3dce7; font-size: 13px; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .footer-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: white; }
+    .footer-brand img { width: 42px; height: 38px; object-fit: contain; }
+    .sticky-wa { position: fixed; bottom: 18px; right: 22px; z-index: 8; box-shadow: 0 7px 22px rgba(0,0,0,.22); }
+    .mobile-menu { display: none; }
+    @media(max-width:900px) {
+      .navlinks { gap: 14px; font-size: 13px; }
+      .hero-grid { gap: 32px; }
+      .subjects { grid-template-columns: repeat(2,1fr); }
+    }
+    @media(max-width:700px) {
+      .wrap { width: min(100% - 30px, 540px); }
+      .announcement { font-size: 12px; }
+      .nav { height: 62px; }
+      .brand { font-size: 15px; }
+      .brand img { width: 44px; height: 39px; }
+      .navlinks a:not(.btn) { display: none; }
+      .navlinks .btn { min-height: 40px; padding: 8px 12px; font-size: 13px; }
+      .hero-grid { grid-template-columns: 1fr; padding: 52px 0 48px; gap: 30px; }
+      h1 { font-size: clamp(39px, 11vw, 56px); }
+      .hero-copy > p { font-size: 16px; }
+      .hero-photo { max-width: 510px; }
+      section { padding: 62px 0; }
+      .promise-grid,.board-grid,.steps,.pricing { grid-template-columns: 1fr; }
+      .subjects { grid-template-columns: 1fr 1fr; gap: 11px; }
+      .subject { padding: 18px 14px; }
+      .subject h3 { font-size: 18px; }
+      .subject p { font-size: 13px; }
+      .teacher { grid-template-columns: 1fr; gap: 24px; }
+      .teacher img { max-height: 300px; }
+      .teacher-points { grid-template-columns: 1fr; }
+      .sticky-wa { bottom: 12px; right: 12px; min-height: 44px; padding: 10px 14px; font-size: 13px; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } *,*::before,*::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="announcement">Homeschool &amp; private-candidate tuition now enrolling <a href="#enquire">Check availability →</a></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="The Digital Tutor home"><img src="/assets/logo.png" alt=""><span>The Digital Tutor</span></a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#boards">Exam boards</a><a href="#subjects">Subjects</a><a href="#approach">How it works</a><a href="#teacher">Your teacher</a><a href="#faq">FAQ</a>
+        <a class="btn btn-green" href="https://wa.me/923316663291?text=Hello%2C%20I%20am%20interested%20in%20homeschool%20or%20private-candidate%20tuition.">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Live online tuition • Cambridge &amp; Pearson Edexcel</div>
+          <h1>A clear study path from home with <span>Dr. Ibrahim Malick, PhD</span></h1>
+          <div class="subject-line">Computer Science <b>•</b> Mathematics <b>•</b> English <b>•</b> Physics</div>
+          <p>Structured teaching and exam preparation for homeschooled students, online-school learners, and private candidates. Build a study plan, strengthen concepts, and practise the questions that matter for your exam board.</p>
+          <div class="hero-actions">
+            <a class="btn btn-green" href="https://wa.me/923316663291?text=Hello%2C%20I%20am%20a%20parent%2Fstudent%20interested%20in%20a%20homeschool%20study%20plan.%20Please%20share%20availability.">Discuss a Study Plan on WhatsApp</a>
+            <a class="btn btn-outline" href="#boards">Explore Exam Boards</a>
+          </div>
+          <div class="price-note">Group tuition: <strong>PKR 30,000/month per subject</strong> &nbsp; • &nbsp; One-to-one: <strong>PKR 6,000/hour</strong></div>
+          <div class="board-tags"><span class="board-tag">Cambridge O Level</span><span class="board-tag">Cambridge AS &amp; A Level</span><span class="board-tag">Pearson Edexcel International GCSE</span><span class="board-tag">Pearson Edexcel IAL</span></div>
+        </div>
+        <div class="hero-photo">
+          <img src="/assets/ibrahim-hero.jpg" alt="Dr. Ibrahim Malick teaching online">
+          <div class="photo-caption"><strong>Dr. Ibrahim Malick, PhD</strong> — teaches every class personally</div>
+        </div>
+      </div>
+    </section>
+    <section class="cream">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Support built around learning at home</div><h2>More structure. Clearer progress. Better exam preparation.</h2><p>Whether you teach your child at home or they attend an online school, get subject teaching and a practical plan that keeps learning moving.</p></div>
+        <div class="promise-grid">
+          <article class="promise"><div class="icon">01</div><h3>A study plan that fits</h3><p>Map the student’s current level, subjects, exam session, and available study time into a realistic plan.</p></article>
+          <article class="promise"><div class="icon">02</div><h3>Teaching with accountability</h3><p>Live lessons, guided practice, and regular check-ins help students keep pace and identify gaps early.</p></article>
+          <article class="promise"><div class="icon">03</div><h3>Board-specific exam practice</h3><p>Learn concepts, then practise past-paper questions using the correct syllabus and exam-board expectations.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="boards">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Choose your route</div><h2>Cambridge or Pearson Edexcel?</h2><p>Tell us the exact qualification and subject you are taking. We will confirm class fit and the syllabus before recommending a schedule.</p></div>
+        <div class="board-grid">
+          <article class="board-card"><div class="eyebrow">Cambridge International</div><h3>O Level, AS &amp; A Level</h3><ul><li>Cambridge syllabus-aligned concept teaching</li><li>Past-paper and mark-scheme practice</li><li>Structured revision and exam technique</li><li>Group or one-to-one tuition</li></ul><p class="board-note">Some syllabus options have assessment requirements that affect private-candidate entry. Confirm availability with your exam centre.</p></article>
+          <article class="board-card"><div class="eyebrow">Pearson Edexcel</div><h3>International GCSE &amp; IAL</h3><ul><li>Lessons matched to the student’s specification</li><li>Worked examples and exam-style questions</li><li>Past-paper practice and feedback</li><li>Group or one-to-one tuition</li></ul><p class="board-note">Share the qualification name and specification code when you enquire so we can check the right course fit.</p></article>
+        </div>
+        <div class="notice"><strong>Exam entry is separate from tuition.</strong> Students arrange their exam registration with the British Council or another approved exam centre. Please confirm your exact subject, syllabus, and assessment components with that centre.</div>
+      </div>
+    </section>
+    <section id="subjects" class="cream">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Four subjects</div><h2>Choose your subject</h2><p>Lessons are taught personally by Dr. Ibrahim Malick, with the study pace and practice matched to the student.</p></div>
+        <div class="subjects">
+          <article class="subject"><div class="icon">CS</div><h3>Computer Science</h3><p>Algorithms, pseudocode, programming, Boolean logic, theory, and exam practice.</p></article>
+          <article class="subject"><div class="icon">M</div><h3>Mathematics</h3><p>Concept mastery, worked examples, problem solving, and past-paper technique.</p></article>
+          <article class="subject"><div class="icon">En</div><h3>English</h3><p>Reading, comprehension, writing structure, clarity, and exam technique.</p></article>
+          <article class="subject"><div class="icon">Ph</div><h3>Physics</h3><p>Conceptual understanding, calculations, problem solving, and exam preparation.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="approach">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">A simple start</div><h2>From first conversation to a working study plan</h2><p>We begin with the student’s actual exam route and learning needs, then agree on the right tuition format.</p></div>
+        <div class="steps">
+          <article class="step"><div class="step-no">01</div><h3>Share the details</h3><p>Send the exam board, qualification, subject, syllabus code if available, exam session, and current challenges.</p></article>
+          <article class="step"><div class="step-no">02</div><h3>Review the starting point</h3><p>Discuss the student’s strengths, gaps, and timeline, then confirm whether a group or one-to-one class fits best.</p></article>
+          <article class="step"><div class="step-no">03</div><h3>Start structured lessons</h3><p>Follow a clear sequence of concept teaching, practice, feedback, and revision towards the student’s exam.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="cream">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Group or one-to-one</div><h2>Choose the right level of support</h2><p>Ask for current schedules and availability. We will confirm the teaching format before enrollment.</p></div>
+        <div class="pricing">
+          <article class="price-card featured"><div class="eyebrow">Structured ongoing tuition</div><h3>Group Classes</h3><div class="price">PKR 30,000 <small>/ month per subject</small></div><ul><li>Regular live lessons</li><li>Structured syllabus coverage</li><li>Concept teaching and exam practice</li><li>Past-paper preparation</li><li>Taught by Dr. Ibrahim Malick, PhD</li></ul><a class="btn btn-green" href="https://wa.me/923316663291?text=Hello%2C%20I%20am%20interested%20in%20group%20tuition%20for%20a%20homeschooled%20or%20private-candidate%20student.">Ask about group availability</a></article>
+          <article class="price-card"><div class="eyebrow">Personalized support</div><h3>One-to-one Tuition</h3><div class="price">PKR 6,000 <small>/ hour</small></div><ul><li>Individual attention and pace</li><li>Weak-topic recovery</li><li>Targeted past-paper practice</li><li>Flexible academic focus</li><li>Taught personally by Dr. Ibrahim Malick, PhD</li></ul><a class="btn btn-light" href="https://wa.me/923316663291?text=Hello%2C%20I%20am%20interested%20in%20one-to-one%20tuition%20for%20a%20homeschooled%20or%20private-candidate%20student.">Ask about one-to-one tuition</a></article>
+        </div>
+      </div>
+    </section>
+    <section id="teacher">
+      <div class="wrap teacher">
+        <img src="/assets/ibrahim-seated.jpg" alt="Dr. Ibrahim Malick, PhD">
+        <div class="teacher-copy"><div class="eyebrow">Meet your teacher</div><h2>Dr. Ibrahim Malick, PhD</h2><p>Students enrolling through The Digital Tutor are taught directly by Dr. Ibrahim. His teaching focuses on strong concepts, clear explanations, exam technique, and the confidence to solve unfamiliar questions.</p><div class="teacher-points"><div>PhD-qualified educator</div><div>University teaching experience</div><div>25+ years in technology</div><div>Classes taught personally</div></div></div>
+      </div>
+    </section>
+    <section id="faq" class="cream">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Frequently asked questions</div><h2>Good to know before you start</h2></div>
+        <div class="faq">
+          <details><summary>Do I need to enroll in a school to take lessons?</summary><p>No. Students can take tuition while studying at home, attending an online school, or preparing independently as private candidates.</p></details>
+          <details><summary>Does The Digital Tutor register students for exams?</summary><p>No. Tuition and exam entry are separate. Students or parents arrange exam registration directly with the British Council or another approved exam centre.</p></details>
+          <details><summary>Can every Cambridge or Edexcel subject be taken as a private candidate?</summary><p>Not always. Availability can depend on the exact syllabus and assessment components. Confirm the subject and options with the exam centre before entering.</p></details>
+          <details><summary>How do you decide which class is right?</summary><p>We discuss the student’s exam board, qualification, subject, syllabus, exam session, current progress, and learning goals before recommending group or one-to-one tuition.</p></details>
+          <details><summary>Who teaches the classes?</summary><p>Dr. Ibrahim Malick teaches the classes offered through this page personally.</p></details>
+          <details><summary>What are the fees?</summary><p>Group classes are PKR 30,000 per subject per month. One-to-one tuition is PKR 6,000 per hour. Contact us to confirm schedules and current availability.</p></details>
+        </div>
+      </div>
+    </section>
+    <section class="final-cta" id="enquire">
+      <div class="wrap"><div class="eyebrow">Your next step</div><h2>Let’s plan a confident start</h2><p>Send the exam board, qualification, subject, syllabus code if available, and exam session. We’ll reply with class fit, schedule, and availability.</p><a class="btn btn-green" href="https://wa.me/923316663291?text=Hello%2C%20I%20would%20like%20to%20discuss%20a%20study%20plan%20for%20a%20homeschool%20or%20private-candidate%20student.%20Board%3A%20%20Qualification%3A%20%20Subject%3A%20%20Exam%20session%3A%20">Discuss a Study Plan on WhatsApp</a></div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-row"><div class="footer-brand"><img src="/assets/logo.png" alt=""><span>The Digital Tutor</span></div><span>Online Cambridge &amp; Edexcel tuition • Dr. Ibrahim Malick, PhD</span><span>Exam registration is arranged separately by the student or parent.</span></div></footer>
+  <a class="btn btn-green sticky-wa" href="https://wa.me/923316663291?text=Hello%2C%20I%20am%20interested%20in%20homeschool%20or%20private-candidate%20tuition.">WhatsApp — Check Availability</a>
+</body>
+</html>
