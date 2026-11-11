@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <title>Leads Admin | The Digital Tutor</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    :root{
+      --navy:#071a35; --navy2:#0d2a52; --gold:#f4c55b; --ink:#10213a; --muted:#5b6b80;
+      --border:#e1e6ee; --soft:#f4f6fa; --red:#c0362c; --green:#12884a; --green-bg:#e6f5ec;
+    }
+    *{box-sizing:border-box}
+    [hidden]{display:none!important}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;color:var(--ink);background:var(--soft);line-height:1.45}
+    button,input,select{font:inherit;color:inherit}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:8px 14px;border-radius:10px;border:1.5px solid var(--border);background:#fff;font-weight:600;cursor:pointer;white-space:nowrap}
+    .btn:hover{border-color:#b9c3d2}
+    .btn-primary{background:var(--navy);border-color:var(--navy);color:#fff}
+    .btn-primary:hover{background:var(--navy2);border-color:var(--navy2)}
+    .btn-sm{min-height:32px;padding:4px 10px;font-size:13px;border-radius:8px}
+    .btn-danger{color:var(--red)}
+    input[type=text],input[type=password],input[type=search],input[type=date],select{min-height:40px;padding:8px 12px;border:1.5px solid var(--border);border-radius:10px;background:#fff;outline:none;min-width:0}
+    input:focus,select:focus{border-color:var(--navy2)}
+
+    /* Login */
+    .login{min-height:100vh;display:grid;place-items:center;padding:16px}
+    .login form{width:min(380px,100%);background:#fff;border-radius:16px;box-shadow:0 14px 40px rgba(5,25,55,.10);padding:32px 28px}
+    .login img{height:46px;width:auto;margin-bottom:18px}
+    .login h1{font-size:22px;margin:0 0 4px}
+    .login p{color:var(--muted);margin:0 0 20px}
+    .login input{width:100%;margin-bottom:12px}
+    .login .btn{width:100%;min-height:46px}
+    .msg{color:var(--red);font-size:14px;margin:0 0 12px}
+
+    /* App */
+    header{background:var(--navy);color:#fff}
+    .bar{width:min(1240px,calc(100% - 32px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+    .bar h1{font-size:17px;margin:0}
+    .bar .btn{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+    .wrap{width:min(1240px,calc(100% - 32px));margin:22px auto 48px}
+    .tabs{display:flex;gap:6px;margin-bottom:18px}
+    .tab{border:0;background:transparent;padding:9px 16px;border-radius:10px;font-weight:700;color:var(--muted);cursor:pointer}
+    .tab[aria-selected=true]{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(5,25,55,.1)}
+    .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:18px}
+    .tile{background:#fff;border-radius:14px;padding:16px 18px;border:1px solid var(--border)}
+    .tile span{display:block;color:var(--muted);font-size:13px;font-weight:600}
+    .tile b{display:block;font-size:28px;margin-top:4px;font-variant-numeric:tabular-nums}
+    .panel{background:#fff;border-radius:14px;border:1px solid var(--border);overflow:hidden}
+    .panel-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--border)}
+    .panel-head h2{font-size:16px;margin:0 auto 0 0}
+    .filters{display:flex;flex-wrap:wrap;gap:8px;padding:12px 16px;border-bottom:1px solid var(--border);background:#fafbfd}
+    .filters input[type=search]{flex:1 1 220px}
+    .filters label{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);font-weight:600}
+    .scroll{overflow-x:auto}
+    table{width:100%;border-collapse:collapse}
+    th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:middle}
+    th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:#fafbfd;white-space:nowrap}
+    tr:last-child td{border-bottom:0}
+    td.num{text-align:right;font-variant-numeric:tabular-nums}
+    th.num{text-align:right}
+    .sub{color:var(--muted);font-size:13px}
+    .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;background:#eef1f6;color:var(--navy2);white-space:nowrap}
+    .pill.on{background:var(--green-bg);color:var(--green)}
+    .pill.off{background:#fdecea;color:var(--red)}
+    .leads a{color:var(--navy2);font-weight:600}
+    .booked{display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-weight:600;font-size:13px;white-space:nowrap}
+    .booked input{width:18px;height:18px;accent-color:var(--green)}
+    .empty{padding:36px 16px;text-align:center;color:var(--muted)}
+    .add{display:flex;gap:8px;flex-wrap:wrap}
+    .add input{flex:1 1 220px}
+    .link{font-family:ui-monospace,Consolas,monospace;font-size:12px;color:var(--muted);word-break:break-all}
+    .actions{display:flex;gap:6px;flex-wrap:wrap}
+    .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;font-weight:600;z-index:60}
+
+    /* QR dialog */
+    dialog{border:0;border-radius:16px;padding:24px;width:min(360px,calc(100% - 32px));text-align:center}
+    dialog::backdrop{background:rgba(7,26,53,.5)}
+    dialog h3{margin:0 0 4px}
+    #qr{display:grid;place-items:center;margin:16px 0}
+    #qr img,#qr canvas{width:240px;height:240px}
+
+    /* Leads table becomes cards on phones */
+    @media(max-width:760px){
+      .leads thead{display:none}
+      .leads tr{display:block;padding:12px 16px;border-bottom:1px solid var(--border)}
+      .leads td{display:flex;justify-content:space-between;gap:12px;padding:4px 0;border:0;text-align:right}
+      .leads td::before{content:attr(data-label);font-weight:600;color:var(--muted);font-size:13px;text-align:left}
+    }
+  </style>
+</head>
+<body>
+  <!-- Login -->
+  <div class="login" id="login" hidden>
+    <form id="login-form">
+      <img src="/assets/logo.png" alt="The Digital Tutor" width="140" height="46">
+      <h1>Admin login</h1>
+      <p>Book store leads portal</p>
+      <div class="msg" id="login-msg" hidden></div>
+      <input type="password" id="password" placeholder="Password" autocomplete="current-password" required>
+      <button class="btn btn-primary" type="submit">Log in</button>
+    </form>
+  </div>
+
+  <!-- App -->
+  <div id="app" hidden>
+    <header>
+      <div class="bar">
+        <h1>The Digital Tutor · Leads</h1>
+        <button class="btn btn-sm" id="logout">Log out</button>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-tab="leads">Leads</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="stores">Book stores</button>
+      </div>
+
+      <section id="tab-leads">
+        <div class="tiles">
+          <div class="tile"><span>Total leads</span><b id="t-total">0</b></div>
+          <div class="tile"><span>This month</span><b id="t-month">0</b></div>
+          <div class="tile"><span>Booked session</span><b id="t-booked">0</b></div>
+          <div class="tile"><span>O / A Level</span><b id="t-level">0 / 0</b></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Leads <span class="sub" id="count"></span></h2>
+            <button class="btn btn-sm" id="refresh">Refresh</button>
+            <button class="btn btn-sm" id="export">Export CSV</button>
+          </div>
+          <div class="filters">
+            <input type="search" id="f-q" placeholder="Search name, email or phone">
+            <select id="f-store"><option value="">All stores</option></select>
+            <select id="f-level"><option value="">All classes</option><option>O Level</option><option>A Level</option></select>
+            <select id="f-booked"><option value="">Booked: any</option><option value="yes">Booked</option><option value="no">Not booked</option></select>
+            <label>From <input type="date" id="f-from"></label>
+            <label>To <input type="date" id="f-to"></label>
+          </div>
+          <div class="scroll">
+            <table class="leads">
+              <thead><tr><th>Date</th><th>Student</th><th>Phone</th><th>Parent email</th><th>Class</th><th>Store</th><th>Booked</th><th></th></tr></thead>
+              <tbody id="leads"></tbody>
+            </table>
+          </div>
+          <div class="empty" id="leads-empty" hidden>No leads yet.</div>
+        </div>
+      </section>
+
+      <section id="tab-stores" hidden>
+        <div class="panel" style="margin-bottom:16px">
+          <div class="panel-head"><h2>Add a book store</h2></div>
+          <form class="add" id="add-store" style="padding:14px 16px">
+            <input type="text" id="store-name" placeholder="Store name, e.g. Liberty Books Gulberg" maxlength="80" required>
+            <button class="btn btn-primary" type="submit">Add store</button>
+          </form>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h2>Book stores</h2></div>
+          <div class="scroll">
+            <table>
+              <thead><tr><th>Store</th><th>QR / form link</th><th class="num">This month</th><th class="num">Total</th><th>Status</th><th></th></tr></thead>
+              <tbody id="stores"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <dialog id="qr-dialog">
+    <h3 id="qr-title"></h3>
+    <div class="sub">Scan opens the registration form with this store selected.</div>
+    <div id="qr"></div>
+    <div class="actions" style="justify-content:center">
+      <button class="btn btn-primary" id="qr-download">Download PNG</button>
+      <button class="btn" id="qr-close">Close</button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script>
+    (function(){
+      var state = { stores: [], leads: [] };
+      var $ = function(id){ return document.getElementById(id); };
+      var FORM_URL = location.origin + '/register/';
+
+      function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]; }); }
+      function toast(t){ var el = $('toast'); el.textContent = t; el.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(function(){ el.hidden = true; }, 2200); }
+      function fmtDate(iso){ var d = new Date(iso); return d.toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'numeric' }) + ' ' + d.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' }); }
+      function phone(p){ return p && p.indexOf('92') === 0 && p.length === 12 ? '0' + p.slice(2, 5) + ' ' + p.slice(5) : p; }
+      function storeLink(slug){ return FORM_URL + '?store=' + encodeURIComponent(slug); }
+
+      function api(action, body){
+        return fetch('/api/admin?action=' + action, body === undefined ? { credentials: 'same-origin' } : {
+          method: 'POST', credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body)
+        }).then(function(r){
+          return r.json().catch(function(){ return {}; }).then(function(d){
+            if (r.status === 401 && action !== 'login') { showLogin(); throw new Error('Please log in.'); }
+            if (!r.ok) throw new Error(d.error || 'Request failed');
+            return d;
+          });
+        });
+      }
+
+      function showLogin(){ $('app').hidden = true; $('login').hidden = false; $('password').focus(); }
+      function showApp(){ $('login').hidden = true; $('app').hidden = false; }
+
+      function load(){
+        return api('data').then(function(d){
+          state.stores = d.stores; state.leads = d.leads;
+          showApp(); renderStores(); renderLeads();
+        });
+      }
+
+      // ---- Leads ----
+      function filtered(){
+        var q = $('f-q').value.trim().toLowerCase(), qd = q.replace(/\D/g, '');
+        var st = $('f-store').value, lv = $('f-level').value, bk = $('f-booked').value;
+        var from = $('f-from').value ? new Date($('f-from').value + 'T00:00:00') : null;
+        var to = $('f-to').value ? new Date($('f-to').value + 'T23:59:59') : null;
+        return state.leads.filter(function(l){
+          if (st && String(l.store_id) !== st) return false;
+          if (lv && l.level !== lv) return false;
+          if (bk === 'yes' && !l.booked) return false;
+          if (bk === 'no' && l.booked) return false;
+          var d = new Date(l.created_at);
+          if (from && d < from) return false;
+          if (to && d > to) return false;
+          if (q) {
+            var hay = (l.name + ' ' + l.email + ' ' + (l.parent_email || '')).toLowerCase();
+            var phoneHit = qd.length >= 3 && (l.phone.indexOf(qd) > -1 || ('0' + l.phone.slice(2)).indexOf(qd) > -1);
+            if (hay.indexOf(q) === -1 && !phoneHit) return false;
+          }
+          return true;
+        });
+      }
+
+      function renderLeads(){
+        var rows = filtered();
+        var monthStart = new Date(); monthStart.setDate(1); monthStart.setHours(0,0,0,0);
+        $('t-total').textContent = rows.length;
+        $('t-month').textContent = rows.filter(function(l){ return new Date(l.created_at) >= monthStart; }).length;
+        $('t-booked').textContent = rows.filter(function(l){ return l.booked; }).length;
+        $('t-level').textContent = rows.filter(function(l){ return l.level === 'O Level'; }).length + ' / ' + rows.filter(function(l){ return l.level === 'A Level'; }).length;
+        $('count').textContent = rows.length === state.leads.length ? '(' + rows.length + ')' : '(' + rows.length + ' of ' + state.leads.length + ')';
+        $('leads-empty').hidden = rows.length > 0;
+        $('leads-empty').textContent = state.leads.length ? 'No leads match these filters.' : 'No leads yet.';
+        $('leads').innerHTML = rows.map(function(l){
+          return '<tr>' +
+            '<td data-label="Date" class="sub">' + esc(fmtDate(l.created_at)) + '</td>' +
+            '<td data-label="Student"><b>' + esc(l.name) + '</b><div class="sub">' + esc(l.email) + '</div></td>' +
+            '<td data-label="Phone"><a href="https://wa.me/' + esc(l.phone) + '" target="_blank" rel="noopener">' + esc(phone(l.phone)) + '</a></td>' +
+            '<td data-label="Parent email" class="sub">' + (l.parent_email ? esc(l.parent_email) : '—') + '</td>' +
+            '<td data-label="Class"><span class="pill">' + esc(l.level) + '</span></td>' +
+            '<td data-label="Store">' + esc(l.store) + '</td>' +
+            '<td data-label="Booked"><label class="booked"><input type="checkbox" data-book="' + l.id + '"' + (l.booked ? ' checked' : '') + '> ' + (l.booked ? 'Yes' : 'No') + '</label></td>' +
+            '<td data-label=""><button class="btn btn-sm btn-danger" data-del="' + l.id + '">Delete</button></td>' +
+          '</tr>';
+        }).join('');
+      }
+
+      ['f-q','f-store','f-level','f-booked','f-from','f-to'].forEach(function(id){
+        $(id).addEventListener('input', renderLeads);
+      });
+
+      $('leads').addEventListener('change', function(e){
+        var id = e.target.getAttribute('data-book');
+        if (!id) return;
+        var lead = state.leads.filter(function(l){ return String(l.id) === id; })[0];
+        var val = e.target.checked;
+        api('setBooked', { id: Number(id), booked: val }).then(function(){
+          lead.booked = val; renderLeads(); toast(val ? 'Marked as booked' : 'Marked as not booked');
+        }).catch(function(err){ e.target.checked = !val; toast(err.message); });
+      });
+
+      $('leads').addEventListener('click', function(e){
+        var id = e.target.getAttribute('data-del');
+        if (!id) return;
+        var lead = state.leads.filter(function(l){ return String(l.id) === id; })[0];
+        if (!confirm('Delete the lead for "' + lead.name + '"? This cannot be undone.')) return;
+        api('deleteLead', { id: Number(id) }).then(function(){
+          state.leads = state.leads.filter(function(l){ return l !== lead; });
+          var s = state.stores.filter(function(x){ return x.id === lead.store_id; })[0];
+          if (s) s.leads--;
+          renderLeads(); renderStores(); toast('Lead deleted');
+        }).catch(function(err){ toast(err.message); });
+      });
+
+      $('export').addEventListener('click', function(){
+        var rows = filtered();
+        var head = ['Date','Student name','Email','Phone','Parent email','Class','Book store','Booked'];
+        var cell = function(v){ v = String(v == null ? '' : v); if (/^[=+\-@]/.test(v)) v = "'" + v; return '"' + v.replace(/"/g, '""') + '"'; };
+        var csv = [head.map(cell).join(',')].concat(rows.map(function(l){
+          return [fmtDate(l.created_at), l.name, l.email, '+' + l.phone, l.parent_email || '', l.level, l.store, l.booked ? 'Yes' : 'No'].map(cell).join(',');
+        })).join('\r\n');
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8' }));
+        a.download = 'leads-' + new Date().toISOString().slice(0, 10) + '.csv';
+        a.click();
+        setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+      });
+
+      $('refresh').addEventListener('click', function(){ load().then(function(){ toast('Updated'); }).catch(function(err){ toast(err.message); }); });
+
+      // ---- Stores ----
+      function renderStores(){
+        var sel = $('f-store'), cur = sel.value;
+        sel.innerHTML = '<option value="">All stores</option>' + state.stores.map(function(s){
+          return '<option value="' + s.id + '">' + esc(s.name) + (s.active ? '' : ' (inactive)') + '</option>';
+        }).join('');
+        sel.value = cur;
+        $('stores').innerHTML = state.stores.map(function(s){
+          return '<tr>' +
+            '<td><b>' + esc(s.name) + '</b></td>' +
+            '<td><div class="link">' + esc(storeLink(s.slug)) + '</div></td>' +
+            '<td class="num">' + s.leads_month + '</td>' +
+            '<td class="num"><b>' + s.leads + '</b></td>' +
+            '<td><span class="pill ' + (s.active ? 'on' : 'off') + '">' + (s.active ? 'Active' : 'Inactive') + '</span></td>' +
+            '<td><div class="actions">' +
+              '<button class="btn btn-sm" data-qr="' + s.id + '">QR code</button>' +
+              '<button class="btn btn-sm" data-copy="' + s.id + '">Copy link</button>' +
+              '<button class="btn btn-sm" data-rename="' + s.id + '">Rename</button>' +
+              '<button class="btn btn-sm' + (s.active ? ' btn-danger' : '') + '" data-toggle="' + s.id + '">' + (s.active ? 'Deactivate' : 'Activate') + '</button>' +
+            '</div></td>' +
+          '</tr>';
+        }).join('') || '<tr><td colspan="6" class="empty">No stores yet.</td></tr>';
+      }
+
+      $('add-store').addEventListener('submit', function(e){
+        e.preventDefault();
+        var name = $('store-name').value.trim();
+        if (!name) return;
+        api('addStore', { name: name }).then(function(){
+          $('store-name').value = ''; return load();
+        }).then(function(){ toast('Store added'); }).catch(function(err){ toast(err.message); });
+      });
+
+      $('stores').addEventListener('click', function(e){
+        var b = e.target.closest('button');
+        if (!b) return;
+        var find = function(attr){ var id = b.getAttribute(attr); return id && state.stores.filter(function(s){ return String(s.id) === id; })[0]; };
+        var s;
+        if ((s = find('data-qr'))) return openQR(s);
+        if ((s = find('data-copy'))) {
+          var url = storeLink(s.slug);
+          (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function(){ toast('Link copied'); }, function(){ prompt('Copy this link:', url); });
+          return;
+        }
+        if ((s = find('data-rename'))) {
+          var name = prompt('New name for this store (the QR link stays the same):', s.name);
+          if (!name || !name.trim() || name.trim() === s.name) return;
+          api('updateStore', { id: s.id, name: name.trim() }).then(load).then(function(){ toast('Store renamed'); }).catch(function(err){ toast(err.message); });
+          return;
+        }
+        if ((s = find('data-toggle'))) {
+          if (s.active && !confirm('Deactivate "' + s.name + '"? It will disappear from the form, but its leads stay.')) return;
+          api('updateStore', { id: s.id, active: !s.active }).then(load).then(function(){ toast(s.active ? 'Store deactivated' : 'Store activated'); }).catch(function(err){ toast(err.message); });
+        }
+      });
+
+      var qrStore = null;
+      function openQR(s){
+        qrStore = s;
+        $('qr-title').textContent = s.name;
+        $('qr').innerHTML = '';
+        new QRCode($('qr'), { text: storeLink(s.slug), width: 1024, height: 1024, correctLevel: QRCode.CorrectLevel.M });
+        $('qr-dialog').showModal();
+      }
+      $('qr-close').addEventListener('click', function(){ $('qr-dialog').close(); });
+      $('qr-download').addEventListener('click', function(){
+        var canvas = $('qr').querySelector('canvas');
+        if (!canvas) return;
+        // Add a white margin so printers and scanners read it reliably.
+        var pad = 96, out = document.createElement('canvas');
+        out.width = canvas.width + pad * 2; out.height = canvas.height + pad * 2;
+        var ctx = out.getContext('2d');
+        ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, out.width, out.height);
+        ctx.drawImage(canvas, pad, pad);
+        var a = document.createElement('a');
+        a.href = out.toDataURL('image/png');
+        a.download = 'qr-' + qrStore.slug + '.png';
+        a.click();
+      });
+
+      // ---- Tabs ----
+      document.querySelectorAll('.tab').forEach(function(t){
+        t.addEventListener('click', function(){
+          document.querySelectorAll('.tab').forEach(function(x){ x.setAttribute('aria-selected', String(x === t)); });
+          $('tab-leads').hidden = t.getAttribute('data-tab') !== 'leads';
+          $('tab-stores').hidden = t.getAttribute('data-tab') !== 'stores';
+        });
+      });
+
+      // ---- Auth ----
+      $('login-form').addEventListener('submit', function(e){
+        e.preventDefault();
+        $('login-msg').hidden = true;
+        api('login', { password: $('password').value }).then(function(){
+          $('password').value = ''; return load();
+        }).catch(function(err){ $('login-msg').textContent = err.message; $('login-msg').hidden = false; });
+      });
+      $('logout').addEventListener('click', function(){ api('logout', {}).then(showLogin, showLogin); });
+
+      load().catch(function(){ showLogin(); });
+    })();
+  </script>
+</body>
+</html>

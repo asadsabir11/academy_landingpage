@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png" />
+  <title>Register | The Digital Tutor</title>
+  <meta name="description" content="Register for O Level and A Level tuition with Dr. Ibrahim Malick, PhD, and book your diagnostic session." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#071a35" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+  <script>
+    // ---- Settings -----------------------------------------------------------
+    var CALENDAR_URL = 'https://scheduler.zoom.us/ibrahim-malick/o-a-level-diagnostic';
+    var GA_ID = 'G-9BH44K80ZP';
+
+    if (GA_ID) {
+      var g = document.createElement('script');
+      g.async = true;
+      g.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(g);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+    }
+    function track(event, params) { try { if (window.gtag) gtag('event', event, params || {}); } catch (e) {} }
+  </script>
+
+  <style>
+    :root{
+      --navy:#071a35; --navy2:#0d2a52; --gold:#f4c55b; --ink:#10213a; --muted:#55657a;
+      --border:#d9dfe8; --soft:#f6f8fb; --red:#c0362c; --green:#12884a;
+    }
+    *{box-sizing:border-box}
+    [hidden]{display:none!important}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16px;color:var(--ink);background:var(--soft);line-height:1.5}
+    a{color:inherit}
+    .top{background:var(--navy);color:#fff;padding:28px 16px 84px;text-align:center}
+    .top img{height:52px;width:auto;margin:0 auto 18px;display:block;background:#fff;border-radius:10px;padding:4px 8px}
+    .top h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(26px,6vw,36px);line-height:1.2;margin:0 0 10px}
+    .top h1 span{color:var(--gold)}
+    .top p{margin:0 auto;max-width:520px;color:#c9d4e5;font-size:16px}
+    .card{width:min(560px,calc(100% - 32px));margin:-60px auto 32px;background:#fff;border-radius:18px;box-shadow:0 14px 40px rgba(5,25,55,.12);padding:28px 24px}
+    @media(min-width:600px){.card{padding:34px 36px}}
+    .steps{display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:22px}
+    .steps b{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;margin-right:6px}
+    .steps .off b{background:#c7d0dc}
+    .steps i{flex:1;height:2px;background:var(--border)}
+    .field{margin-bottom:18px}
+    label,.label{display:block;font-weight:700;font-size:15px;margin-bottom:6px}
+    .opt{font-weight:500;color:var(--muted)}
+    input[type=text],input[type=email],input[type=tel],select{width:100%;min-height:50px;padding:12px 14px;font:inherit;color:var(--ink);background:#fff;border:1.5px solid var(--border);border-radius:12px;outline:none}
+    input:focus,select:focus{border-color:var(--navy2);box-shadow:0 0 0 3px rgba(24,79,142,.15)}
+    .bad input,.bad select,.bad .pills{border-color:var(--red)}
+    .err{color:var(--red);font-size:14px;margin-top:5px;display:none}
+    .bad .err{display:block}
+    .pills{display:grid;grid-template-columns:1fr 1fr;gap:10px;border:1.5px solid transparent;border-radius:14px}
+    .pills input{position:absolute;opacity:0;pointer-events:none}
+    .pills label{margin:0;min-height:54px;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--border);border-radius:12px;cursor:pointer;font-size:16px}
+    .pills input:checked+label{border-color:var(--navy);background:var(--navy);color:#fff}
+    .pills input:focus-visible+label{box-shadow:0 0 0 3px rgba(24,79,142,.3)}
+    .store-fixed{display:flex;align-items:center;gap:10px;min-height:50px;padding:12px 14px;border-radius:12px;background:#fff8e6;border:1.5px solid #f1dca6;font-weight:600}
+    .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .btn{width:100%;min-height:56px;border:0;border-radius:12px;background:var(--gold);color:#15233a;font:inherit;font-weight:800;font-size:17px;cursor:pointer;padding:14px 20px}
+    .btn:hover{background:#f0b93f}
+    .btn[disabled]{opacity:.7;cursor:wait}
+    .note{font-size:13px;color:var(--muted);text-align:center;margin:12px 0 0}
+    .alert{background:#fdecea;color:var(--red);border-radius:10px;padding:12px 14px;font-size:15px;margin-bottom:16px}
+    .done{text-align:center;padding:8px 0}
+    .done .tick{width:64px;height:64px;border-radius:50%;background:#e6f5ec;color:var(--green);display:grid;place-items:center;margin:0 auto 16px;font-size:34px;font-weight:800}
+    .done h2{font-family:"Playfair Display",Georgia,serif;margin:0 0 8px;font-size:26px}
+    .done p{color:var(--muted);margin:0 0 22px}
+    .done .btn{display:flex;align-items:center;justify-content:center;text-decoration:none}
+    footer{text-align:center;color:var(--muted);font-size:13px;padding:0 16px 32px}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <img src="/assets/logo.png" alt="The Digital Tutor" width="160" height="52">
+    <h1>Learn with <span>Dr. Ibrahim Malick, PhD</span></h1>
+    <p>O Level &amp; A Level tuition. Register below, then book your diagnostic session.</p>
+  </div>
+
+  <main class="card">
+    <div class="steps" aria-hidden="true">
+      <span id="step1"><b>1</b>Register</span><i></i><span id="step2" class="off"><b>2</b>Book session</span>
+    </div>
+
+    <form id="form" novalidate>
+      <div class="alert" id="alert" role="alert" hidden></div>
+
+      <div class="field" data-f="name">
+        <label for="name">Student name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required maxlength="120">
+        <div class="err"></div>
+      </div>
+
+      <div class="field" data-f="email">
+        <label for="email">Student email</label>
+        <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required maxlength="160">
+        <div class="err"></div>
+      </div>
+
+      <div class="field" data-f="phone">
+        <label for="phone">Phone / WhatsApp number</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="03XX XXXXXXX" required maxlength="20">
+        <div class="err"></div>
+      </div>
+
+      <div class="field" data-f="parent_email">
+        <label for="parent_email">Parent email <span class="opt">(optional)</span></label>
+        <input type="email" id="parent_email" name="parent_email" inputmode="email" maxlength="160">
+        <div class="err"></div>
+      </div>
+
+      <div class="field" data-f="level">
+        <span class="label" id="level-label">Class</span>
+        <div class="pills" role="radiogroup" aria-labelledby="level-label">
+          <input type="radio" name="level" id="lvl-o" value="O Level"><label for="lvl-o">O Level</label>
+          <input type="radio" name="level" id="lvl-a" value="A Level"><label for="lvl-a">A Level</label>
+        </div>
+        <div class="err"></div>
+      </div>
+
+      <div class="field" data-f="store">
+        <label for="store" id="store-label">Which book store did you scan this at?</label>
+        <div class="store-fixed" id="store-fixed" hidden></div>
+        <select id="store" name="store" required>
+          <option value="">Loading stores…</option>
+        </select>
+        <div class="err"></div>
+      </div>
+
+      <div class="hp" aria-hidden="true">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button class="btn" type="submit" id="submit">Register &amp; book my session&nbsp;→</button>
+      <p class="note">After registering you'll pick a time for your diagnostic session.</p>
+    </form>
+
+    <div class="done" id="done" hidden>
+      <div class="tick" aria-hidden="true">✓</div>
+      <h2 id="done-title">You're registered!</h2>
+      <p>Taking you to the calendar to book your diagnostic session…</p>
+      <a class="btn" id="book" href="#">Book my session now →</a>
+    </div>
+  </main>
+
+  <footer>© The Digital Tutor · Dr. Ibrahim Malick, PhD</footer>
+
+  <script>
+    (function(){
+      var form = document.getElementById('form');
+      var select = document.getElementById('store');
+      var fixed = document.getElementById('store-fixed');
+      var alertBox = document.getElementById('alert');
+      var btn = document.getElementById('submit');
+      var qrStore = (new URLSearchParams(location.search).get('store') || '').trim().toLowerCase();
+
+      document.getElementById('book').href = CALENDAR_URL;
+
+      // Load the store list. A QR link with ?store=slug picks (and locks) the store.
+      fetch('/api/stores').then(function(r){ return r.json(); }).then(function(d){
+        var stores = (d && d.stores) || [];
+        select.innerHTML = '<option value="">Choose the book store</option>';
+        stores.forEach(function(s){
+          var o = document.createElement('option');
+          o.value = s.slug; o.textContent = s.name;
+          select.appendChild(o);
+        });
+        var match = stores.filter(function(s){ return s.slug === qrStore; })[0];
+        if (match) {
+          select.value = match.slug;
+          select.hidden = true;
+          fixed.textContent = '📍 ' + match.name;
+          fixed.hidden = false;
+          document.getElementById('store-label').textContent = 'Book store';
+        }
+      }).catch(function(){
+        select.innerHTML = '<option value="">Could not load stores. Please refresh.</option>';
+      });
+
+      function setError(name, msg){
+        var f = form.querySelector('[data-f="' + name + '"]');
+        if (!f) return;
+        f.classList.toggle('bad', !!msg);
+        f.querySelector('.err').textContent = msg || '';
+      }
+
+      function value(name){
+        var el = form.elements[name];
+        return el ? (el.value || '').trim() : '';
+      }
+
+      function check(){
+        var e = {};
+        var email = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        if (value('name').length < 2) e.name = 'Please enter the student name.';
+        if (!email.test(value('email'))) e.email = 'Please enter a valid email.';
+        var digits = value('phone').replace(/\D/g, '');
+        if (digits.length < 10 || digits.length > 15) e.phone = 'Please enter a valid phone number.';
+        if (value('parent_email') && !email.test(value('parent_email'))) e.parent_email = 'Please enter a valid parent email, or leave it empty.';
+        if (!value('level')) e.level = 'Please choose O Level or A Level.';
+        if (!select.value) e.store = 'Please choose the book store.';
+        return e;
+      }
+
+      form.addEventListener('input', function(ev){
+        var f = ev.target.closest('[data-f]');
+        if (f && f.classList.contains('bad')) setError(f.getAttribute('data-f'), '');
+      });
+      form.addEventListener('change', function(ev){
+        var f = ev.target.closest('[data-f]');
+        if (f && f.classList.contains('bad')) setError(f.getAttribute('data-f'), '');
+      });
+
+      form.addEventListener('submit', function(ev){
+        ev.preventDefault();
+        alertBox.hidden = true;
+        var errors = check();
+        ['name','email','phone','parent_email','level','store'].forEach(function(n){ setError(n, errors[n]); });
+        var first = Object.keys(errors)[0];
+        if (first) {
+          var el = form.querySelector('[data-f="' + first + '"] input, [data-f="' + first + '"] select');
+          if (el) el.focus();
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = 'Saving…';
+        var payload = {
+          name: value('name'), email: value('email'), phone: value('phone'),
+          parent_email: value('parent_email'), level: value('level'), store: select.value,
+          website: value('website')
+        };
+        var storeName = select.options[select.selectedIndex] ? select.options[select.selectedIndex].text : '';
+
+        fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function(r){
+          return r.json().catch(function(){ return {}; }).then(function(d){ return { ok: r.ok, d: d }; });
+        }).then(function(res){
+          if (!res.ok || !res.d.ok) {
+            var fields = (res.d && res.d.fields) || {};
+            Object.keys(fields).forEach(function(n){ setError(n, fields[n]); });
+            throw new Error((res.d && res.d.error) || 'Something went wrong. Please try again.');
+          }
+          track('registration_submit', { store: storeName, level: payload.level, duplicate: !!res.d.duplicate });
+          if (res.d.duplicate) document.getElementById('done-title').textContent = "You're already registered!";
+          form.hidden = true;
+          document.getElementById('done').hidden = false;
+          document.getElementById('step1').classList.add('off');
+          document.getElementById('step2').classList.remove('off');
+          window.scrollTo(0, 0);
+          setTimeout(function(){ location.href = CALENDAR_URL; }, 1800);
+        }).catch(function(err){
+          alertBox.textContent = err.message || 'Something went wrong. Please try again.';
+          alertBox.hidden = false;
+          btn.disabled = false;
+          btn.innerHTML = 'Register &amp; book my session&nbsp;→';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
